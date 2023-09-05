@@ -1,1 +1,1 @@
-Home Work №1
+# Домашки по курсу Administrator Linux Professionsl в соответствующих папках

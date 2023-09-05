@@ -58,6 +58,9 @@
 
 
 
+## ШАГ 3: Создание своего box образа при помощи packer
+
+https://github.com/kureshtar/otus_linux_administrator/tree/main/HomeWork1/packer
 
 
 

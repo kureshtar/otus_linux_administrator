@@ -283,7 +283,7 @@ Writing superblocks and filesystem accounting information: done
 
 **[root@lvm boot]# mount /dev/vg_var/lv_var /mnt**
 
-**[root@lvm boot]# cp -aR /var/* /mnt/**
+**[root@lvm boot]# cp -aR /var/\* /mnt/**
 
 **[root@lvm boot]# rsy**
 
@@ -297,7 +297,7 @@ rsync                  rsyslogd               rsyslog-recover-qi.pl
 
 **[root@lvm boot]# ^C**
 
-[root@lvm boot]# rsync -avHPSAX /var/ /mnt/
+**[root@lvm boot]# rsync -avHPSAX /var/ /mnt/**
 
 sending incremental file list
 

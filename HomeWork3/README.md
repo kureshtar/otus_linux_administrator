@@ -1,6 +1,6 @@
 # LVM
 
-##Создание PV, VG, LV.
+## Создание PV, VG, LV.
 
 **[root@lvm ~]# pvcreate /dev/sdb**
 

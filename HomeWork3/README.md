@@ -9,10 +9,12 @@
 **[root@lvm ~]# vgcreate vg_root /dev/sdb**
 
   Volume group "vg_root" successfully created
-[root@lvm ~]# lvcreate -n lv_root -l +100%FREE /dev/vg_root
+  
+**[root@lvm ~]# lvcreate -n lv_root -l +100%FREE /dev/vg_root**
+
   Logical volume "lv_root" created.
 
-###Создаю ФС
+## Создаю ФС
 [root@lvm ~]# mkfs.xfs /dev/vg_root/lv_root
 meta-data=/dev/vg_root/lv_root   isize=512    agcount=4, agsize=655104 blks
          =                       sectsz=512   attr=2, projid32bit=1

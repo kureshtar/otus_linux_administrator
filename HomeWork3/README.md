@@ -311,13 +311,14 @@ sent 130,104 bytes  received 561 bytes  261,330.00 bytes/sec
 
 total size is 218,786,392  speedup is 1,674.41
 
-**[root@lvm boot]# mkdir /tmp/oldvar && mv /var/* /tmp/oldvar**
+**[root@lvm boot]# mkdir /tmp/oldvar && mv /var/* /tmp/oldvar **
 
 **[root@lvm boot]# umount /mnt**
 
 **[root@lvm boot]# mount /dev/vg_var/lv_var /var**
 
 ## Правлю fstab для автоматического монтирования
+
 **[root@lvm boot]# echo "`blkid | grep var: | awk '{print $2}'` /var ext4 defaults 0 0"**
 
 UUID="2b10ba22-7f65-4062-9a1d-eec3e1649f64" /var ext4 defaults 0 0

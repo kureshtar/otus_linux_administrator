@@ -515,7 +515,7 @@ Writing superblocks and filesystem accounting information: done
 
 **[root@lvm boot]# mount /dev/vg_var/lv_var /mnt**
 
-**[root@lvm boot]# cp -aR /var/* /mnt/**
+**[root@lvm boot]# cp -aR /var/\* /mnt/**
 
 **[root@lvm boot]# rsy**
 
@@ -527,7 +527,7 @@ rsync                  rsyslogd               rsyslog-recover-qi.pl
 
 **[root@lvm boot]# rsyrsync -avHPSAX /var/ /mnt/^C**
 
-[root@lvm boot]# ^C
+**[root@lvm boot]# ^C**
 
 **[root@lvm boot]# rsync -avHPSAX /var/ /mnt/**
 
@@ -543,7 +543,7 @@ sent 130,104 bytes  received 561 bytes  261,330.00 bytes/sec
 
 total size is 218,786,392  speedup is 1,674.41
 
-**[root@lvm boot]# mkdir /tmp/oldvar && mv /var/* /tmp/oldvar**
+**[root@lvm boot]# mkdir /tmp/oldvar && mv /var/\* /tmp/oldvar**
 
 **[root@lvm boot]# umount /mnt**
 

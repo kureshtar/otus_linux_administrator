@@ -15,7 +15,9 @@ Physical volume "/dev/sdb" successfully created.
   Logical volume "lv_root" created.
 
 ## Создаю ФС
-[root@lvm ~]# mkfs.xfs /dev/vg_root/lv_root
+
+**[root@lvm ~]# mkfs.xfs /dev/vg_root/lv_root**
+
 meta-data=/dev/vg_root/lv_root   isize=512    agcount=4, agsize=655104 blks
          =                       sectsz=512   attr=2, projid32bit=1
          =                       crc=1        finobt=0, sparse=0
@@ -25,7 +27,8 @@ naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
 log      =internal log           bsize=4096   blocks=2560, version=2
          =                       sectsz=512   sunit=0 blks, lazy-count=1
 realtime =none                   extsz=4096   blocks=0, rtextents=0
-###Монтирую
+
+## Монтирую
 [root@lvm ~]# mount /dev/vg_root/lv_root /mnt
 ###Копирую все данные
 [root@lvm ~]# xfsdump -J - /dev/VolGroup00/LogVol00 | xfsrestore -J - /mnt

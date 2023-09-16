@@ -3,7 +3,7 @@
 ## Создание PV, VG, LV.
 
 **[root@lvm ~]# pvcreate /dev/sdb**
-  Physical volume "/dev/sdb" successfully created.
+Physical volume "/dev/sdb" successfully created.
 
 **[root@lvm ~]# vgcreate vg_root /dev/sdb**
 

@@ -4,7 +4,7 @@
 
 **[root@lvm ~]# pvcreate /dev/sdb**
 
-Physical volume "/dev/sdb" successfully created.
+  Physical volume "/dev/sdb" successfully created.
 
 **[root@lvm ~]# vgcreate vg_root /dev/sdb**
 
@@ -18,23 +18,23 @@ Physical volume "/dev/sdb" successfully created.
 
 **[root@lvm ~]# mkfs.xfs /dev/vg_root/lv_root**
 
-meta-data=/dev/vg_root/lv_root   isize=512    agcount=4, agsize=655104 blks
+  meta-data=/dev/vg_root/lv_root   isize=512    agcount=4, agsize=655104 blks
 
          =                       sectsz=512   attr=2, projid32bit=1
          
          =                       crc=1        finobt=0, sparse=0
 
-data     =                       bsize=4096   blocks=2620416, imaxpct=25
+  data     =                       bsize=4096   blocks=2620416, imaxpct=25
 
          =                       sunit=0      swidth=0 blks
 
-naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
+  naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
 
-log      =internal log           bsize=4096   blocks=2560, version=2
+  log      =internal log           bsize=4096   blocks=2560, version=2
 
          =                       sectsz=512   sunit=0 blks, lazy-count=1
 
-realtime =none                   extsz=4096   blocks=0, rtextents=0
+  realtime =none                   extsz=4096   blocks=0, rtextents=0
 
 ## Монтирую
 
@@ -44,17 +44,17 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 
 **[root@lvm ~]# xfsdump -J - /dev/VolGroup00/LogVol00 | xfsrestore -J - /mnt**
 
-xfsdump: using file dump (drive_simple) strategy
+  xfsdump: using file dump (drive_simple) strategy
 
-...
+  ...
 
-...
+  ...
 
-xfsdump: Dump Status: SUCCESS
+  xfsdump: Dump Status: SUCCESS
 
-xfsrestore: restore complete: 8 seconds elapsed
+  xfsrestore: restore complete: 8 seconds elapsed
 
-xfsrestore: Restore Status: SUCCESS
+  xfsrestore: Restore Status: SUCCESS
 
 ## Переконфигурация grub
 

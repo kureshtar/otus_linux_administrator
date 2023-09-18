@@ -3,7 +3,6 @@
 ## Создание PV, VG, LV.
 
 ```
-
 [root@lvm ~]# pvcreate /dev/sdb
   Physical volume "/dev/sdb" successfully created.
 
@@ -31,24 +30,21 @@
 ```
 
 ## Монтирую
-
-**[root@lvm ~]# mount /dev/vg_root/lv_root /mnt**
+```
+[root@lvm ~]# mount /dev/vg_root/lv_root /mnt
+```
 
 ## Копирую все данные
-
-**[root@lvm ~]# xfsdump -J - /dev/VolGroup00/LogVol00 | xfsrestore -J - /mnt**
+```
+[root@lvm ~]# xfsdump -J - /dev/VolGroup00/LogVol00 | xfsrestore -J - /mnt
 
   xfsdump: using file dump (drive_simple) strategy
-
   ...
-
   ...
-
   xfsdump: Dump Status: SUCCESS
-
   xfsrestore: restore complete: 8 seconds elapsed
-
   xfsrestore: Restore Status: SUCCESS
+```
 
 ## Переконфигурация grub
 

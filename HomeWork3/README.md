@@ -47,12 +47,13 @@
 ```
 
 ## Переконфигурация grub
+```
 
-**[root@lvm ~]# for i in /proc/ /sys/ /dev/ /run/ /boot/; do mount --bind $i /mnt/$i; done**
+[root@lvm ~]# for i in /proc/ /sys/ /dev/ /run/ /boot/; do mount --bind $i /mnt/$i; done
 
-**[root@lvm ~]# chroot /mnt/**
+[root@lvm ~]# chroot /mnt/
 
-**[root@lvm /]# grub2-mkconfig -o /boot/grub2/grub.cfg**
+[root@lvm /]# grub2-mkconfig -o /boot/grub2/grub.cfg
 
 Generating grub configuration file ...
 
@@ -75,6 +76,7 @@ Executing: /sbin/dracut -v initramfs-3.10.0-862.2.3.el7.x86_64.img 3.10.0-862.2.
 *** Creating image file done ***
 
 *** Creating initramfs image file '/boot/initramfs-3.10.0-862.2.3.el7.x86_64.img' done ***
+```
 
 ## Замена в grub.cfg
 

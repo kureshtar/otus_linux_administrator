@@ -2,6 +2,8 @@
 
 ## Создание PV, VG, LV.
 
+```
+
 **[root@lvm ~]# pvcreate /dev/sdb**
 
   Physical volume "/dev/sdb" successfully created.
@@ -13,6 +15,7 @@
 **[root@lvm ~]# lvcreate -n lv_root -l +100%FREE /dev/vg_root**
 
   Logical volume "lv_root" created.
+```
 
 ## Создаю ФС
 

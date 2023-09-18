@@ -4,15 +4,15 @@
 
 ```
 
-**[root@lvm ~]# pvcreate /dev/sdb**
+[root@lvm ~]# pvcreate /dev/sdb
 
   Physical volume "/dev/sdb" successfully created.
 
-**[root@lvm ~]# vgcreate vg_root /dev/sdb**
+[root@lvm ~]# vgcreate vg_root /dev/sdb
 
   Volume group "vg_root" successfully created
   
-**[root@lvm ~]# lvcreate -n lv_root -l +100%FREE /dev/vg_root**
+[root@lvm ~]# lvcreate -n lv_root -l +100%FREE /dev/vg_root
 
   Logical volume "lv_root" created.
 ```

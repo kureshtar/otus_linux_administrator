@@ -18,8 +18,9 @@
 ```
 
 ## Создаю ФС
+```
 
-**[root@lvm ~]# mkfs.xfs /dev/vg_root/lv_root**
+[root@lvm ~]# mkfs.xfs /dev/vg_root/lv_root
 
   meta-data=/dev/vg_root/lv_root   isize=512    agcount=4, agsize=655104 blks
 
@@ -38,6 +39,7 @@
          =                       sectsz=512   sunit=0 blks, lazy-count=1
 
   realtime =none                   extsz=4096   blocks=0, rtextents=0
+```
 
 ## Монтирую
 

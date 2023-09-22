@@ -39,3 +39,10 @@
 ![zfs list](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork3_ZFS/images/Screenshot%20from%202023-09-22%2009-14-20.png)
 
 Таким образом, у нас получается, что алгоритм gzip-9 самый эффективный по сжатию.
+
+##  2. Определение настроек пула
+
+Скачиваем архив в домашний каталог: 
+```
+[root@zfs ~]# wget -O archive.tar.gz --no-check-certificate 'https://drive.google.com/u/0/uc?id=1KRBNW33QWqbvbVHa3hLJivOAt60yukkg&export=download'
+```

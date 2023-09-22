@@ -84,4 +84,13 @@ C помощью команды grep можно уточнить конкрет�
 
 ![wget](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork3_ZFS/images/Screenshot%20from%202023-09-22%2009-24-43.png)
 
+Восстановим файловую систему из снапшота: 
+
+```
+[root@zfs ~]# zfs receive otus/test@today < otus_task2.file
+```
+
+Далее, ищем в каталоге /otus/test файл с именем “secret_message”:
+
+![wget](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork3_ZFS/images/Screenshot%20from%202023-09-22%2009-29-11.png)
 

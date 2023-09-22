@@ -23,3 +23,10 @@
 
 ![zfs get all](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork3_ZFS/images/Screenshot%20from%202023-09-22%2009-11-54.png)
 
+Скачаем один и тот же текстовый файл во все пулы: 
+```
+[root@zfs vagrant]# for i in {1..4}; do wget -P /otus$i https://gutenberg.org/cache/epub/2600/pg2600.converter.log; done
+```
+
+Проверим, что файл был скачан во все пулы:
+

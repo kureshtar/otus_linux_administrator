@@ -11,3 +11,14 @@
 Смотрим информацию о пулах:
 
 ![zpool list](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork3_ZFS/images/Screenshot%20from%202023-09-21%2014-24-02.png)
+
+Добавим разные алгоритмы сжатия в каждую файловую систему:
+
+- Алгоритм lzjb: zfs set compression=lzjb otus1
+- 
+- Алгоритм lz4:  zfs set compression=lz4 otus2
+- 
+- Алгоритм gzip: zfs set compression=gzip-9 otus3
+- 
+- Алгоритм zle:  zfs set compression=zle otus4
+

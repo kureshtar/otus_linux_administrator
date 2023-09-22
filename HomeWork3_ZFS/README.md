@@ -19,3 +19,7 @@
 - Алгоритм gzip: zfs set compression=gzip-9 otus3
 - Алгоритм zle:  zfs set compression=zle otus4
 
+Проверим, что все файловые системы имеют разные методы сжатия:
+
+![zfs get all](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork3_ZFS/images/Screenshot%20from%202023-09-22%2009-11-54.png)
+

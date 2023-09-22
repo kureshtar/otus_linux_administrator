@@ -8,3 +8,6 @@
 
 ![zpool create](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork3_ZFS/images/Screenshot%20from%202023-09-21%2014-22-55.png)
 
+Смотрим информацию о пулах:
+
+![zpool list](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork3_ZFS/images/Screenshot%20from%202023-09-21%2014-24-02.png)

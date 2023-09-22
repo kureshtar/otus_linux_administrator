@@ -36,4 +36,6 @@
 
 Проверим, сколько места занимает один и тот же файл в разных пулах и проверим степень сжатия файлов:
 
-![zfs get all](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork3_ZFS/images/Screenshot%20from%202023-09-22%2009-14-20.png)
+![zfs list](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork3_ZFS/images/Screenshot%20from%202023-09-22%2009-14-20.png)
+
+Таким образом, у нас получается, что алгоритм gzip-9 самый эффективный по сжатию.

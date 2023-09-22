@@ -73,3 +73,15 @@ config:
 
 errors: No known data errors
 ```
+
+C помощью команды grep можно уточнить конкретный параметр, например:
+
+![zfs get](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork3_ZFS/images/Screenshot%20from%202023-09-22%2009-22-20.png)
+
+## 3. Работа со снапшотом, поиск сообщения от преподавателя
+
+Скачаем файл, указанный в задании:
+
+![wget](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork3_ZFS/images/Screenshot%20from%202023-09-22%2009-24-43.png)
+
+

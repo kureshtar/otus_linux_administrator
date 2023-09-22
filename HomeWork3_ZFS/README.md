@@ -30,5 +30,10 @@
 
 Проверим, что файл был скачан во все пулы:
 
-![zfs get all](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork3_ZFS/images/Screenshot%20from%202023-09-22%2009-14-20.png)
+![ls -l /otus*](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork3_ZFS/images/Screenshot%20from%202023-09-22%2009-14-20.png)
 
+Видим, что самый оптимальный метод сжатия у нас используется в пуле otus3.
+
+Проверим, сколько места занимает один и тот же файл в разных пулах и проверим степень сжатия файлов:
+
+![zfs get all](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork3_ZFS/images/Screenshot%20from%202023-09-22%2009-14-20.png)

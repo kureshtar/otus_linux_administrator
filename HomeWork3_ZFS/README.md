@@ -51,3 +51,5 @@
 
 ![tar -xzvf archive.tar.gz](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork3_ZFS/images/Screenshot%20from%202023-09-22%2009-18-51.png)
 
+Данный вывод показывает нам имя пула, тип raid и его состав.
+

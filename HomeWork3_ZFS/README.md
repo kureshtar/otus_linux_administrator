@@ -3,3 +3,8 @@
 Смотрим список всех дисков, которые есть в виртуальной машине: lsblk
 
 ![lsblk](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork3_ZFS/images/Screenshot%20from%202023-09-21%2014-19-36.png)
+
+Создаём три пула в режиме RAID 1, каждый пул состоящий из двух дисков:
+
+![zpool create](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork3_ZFS/images/Screenshot%20from%202023-09-21%2014-22-55.png)
+

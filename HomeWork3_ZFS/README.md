@@ -44,5 +44,10 @@
 
 Скачиваем архив в домашний каталог: 
 ```
-[root@zfs ~]# wget -O archive.tar.gz --no-check-certificate 'https://drive.google.com/u/0/uc?id=1KRBNW33QWqbvbVHa3hLJivOAt60yukkg&export=download'
+[root@zfs vagrant]# wget -O archive.tar.gz --no-check-certificate 'https://drive.google.com/u/0/uc?id=1KRBNW33QWqbvbVHa3hLJivOAt60yukkg&export=download'
 ```
+
+Разархивируем его и проверим, возможно ли импортировать данный каталог в пул::
+
+![tar -xzvf archive.tar.gz](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork3_ZFS/images/Screenshot%20from%202023-09-22%2009-18-51.png)
+

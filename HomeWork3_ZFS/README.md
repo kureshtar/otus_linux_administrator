@@ -30,3 +30,5 @@
 
 Проверим, что файл был скачан во все пулы:
 
+![zfs get all](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork3/README.md)
+

@@ -53,3 +53,23 @@
 
 Данный вывод показывает нам имя пула, тип raid и его состав.
 
+Сделаем импорт данного пула к нам в ОС:
+
+```
+[root@zfs ~]# zpool import -d zpoolexport/ otus
+[root@zfs ~]# zpool status
+  pool: otus
+ state: ONLINE
+  scan: none requested
+config:
+
+
+        NAME                         STATE     READ WRITE CKSUM
+        otus                         ONLINE       0     0     0
+          mirror-0                   ONLINE       0     0     0
+            /root/zpoolexport/filea  ONLINE       0     0     0
+            /root/zpoolexport/fileb  ONLINE       0     0     0
+
+
+errors: No known data errors
+```

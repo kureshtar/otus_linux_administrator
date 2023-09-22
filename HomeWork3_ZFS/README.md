@@ -56,8 +56,8 @@
 Сделаем импорт данного пула к нам в ОС:
 
 ```
-[root@zfs ~]# zpool import -d zpoolexport/ otus
-[root@zfs ~]# zpool status
+[root@zfs vagrant]# zpool import -d zpoolexport/ otus
+[root@zfs vagrant]# zpool status
   pool: otus
  state: ONLINE
   scan: none requested
@@ -87,10 +87,10 @@ C помощью команды grep можно уточнить конкрет�
 Восстановим файловую систему из снапшота: 
 
 ```
-[root@zfs ~]# zfs receive otus/test@today < otus_task2.file
+[root@zfs vagrant]# zfs receive otus/test@today < otus_task2.file
 ```
 
-Далее, ищем в каталоге /otus/test файл с именем “secret_message”:
+Далее, ищем в каталоге /otus/test файл с именем “secret_message” и смотрим содержимое найденного файла:
 
 ![wget](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork3_ZFS/images/Screenshot%20from%202023-09-22%2009-29-11.png)
 

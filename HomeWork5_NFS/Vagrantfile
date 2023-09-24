@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
  
 Vagrant.configure(2) do |config|
-   config.vm.box = "my-box-centos7-2004-01"
+   config.vm.box = "centos7"
  
  config.vm.provider "virtualbox" do |v|
     v.memory = 256

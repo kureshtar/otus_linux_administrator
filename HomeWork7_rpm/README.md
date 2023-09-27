@@ -15,6 +15,8 @@ rpm -i nginx-1.20.2-1.el7.ngx.src.rpm
 ### Качаем  и распаковываем OpenSSL:
 ```
 wget https://github.com/openssl/openssl/archive/refs/heads/OpenSSL_1_1_1-stable.zip
+```
+```
 unzip OpenSSL_1_1_1-stable.zip
 ```
 1 Создать свой RPM пакет

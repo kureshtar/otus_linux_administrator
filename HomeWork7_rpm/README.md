@@ -4,6 +4,10 @@
 ```
 yum install -y redhat-lsblcore wget rpmdevtools rpm-build createrepo yum-utils gcc zlib-devel openssl-devel
 ```
+## Качаем исходник nginx:
+```
+wget https://nginx.org/packages/centos/7/SRPMS/nginx-1.20.2-1.el7.ngx.src.rpm
+```
 
 1 Создать свой RPM пакет
 

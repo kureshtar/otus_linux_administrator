@@ -55,10 +55,21 @@ cp -f /root/rpmbuild/RPMS/x86_64/nginx-1.20.2-1.el7.ngx.x86_64.rpm /usr/share/ng
         autoindex on;
     }
 ```
+### перезапускаем Nginx:
+```
+nginx -s reload
+```
+### Создаем файл репозитория /etc/yum.repos.d/otus.repo со следующим содержимым:
+```
+[otus]
+name=otus-linux
+baseurl=http://localhost/repo
+gpgcheck=0
+enabled=1
+```
 
 
-
-Содержимое:
+# Содержимое:
 
 default.conf - файл с измененными настройками nginx
 

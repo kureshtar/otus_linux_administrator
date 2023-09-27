@@ -19,9 +19,15 @@ wget https://github.com/openssl/openssl/archive/refs/heads/OpenSSL_1_1_1-stable.
 ```
 unzip OpenSSL_1_1_1-stable.zip
 ```
-1 Создать свой RPM пакет
+### Доустанавливаем отсутствующие зависимости для Nginx:
+```
+yum-builddep /root/rpmbuild/SPECS/nginx.spec -y
+```
+### Добввляем в файле /root/rpmbuild/SPECS/nginx.spec в разделе %build строку для OpenSSL:
+```
+--with-openssl=/home/vagrant/openssl-OpenSSL_1_1_1-stable
+```
 
-2 Создать свой репозиторий и разместить там ранее собранный RPM
 
 
 

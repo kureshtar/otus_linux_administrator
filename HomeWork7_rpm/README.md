@@ -1,5 +1,10 @@
 # Управление пакетами. Дистрибьюция софта
 
+## Ставим необходимые утилиты:
+```
+yum install -y redhat-lsblcore wget rpmdevtools rpm-build createrepo yum-utils gcc zlib-devel openssl-devel
+```
+
 1 Создать свой RPM пакет
 
 2 Создать свой репозиторий и разместить там ранее собранный RPM

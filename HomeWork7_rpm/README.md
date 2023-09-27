@@ -47,8 +47,14 @@ mkdir /usr/share/nginx/html/repo
 ```
 cp -f /root/rpmbuild/RPMS/x86_64/nginx-1.20.2-1.el7.ngx.x86_64.rpm /usr/share/nginx/html/repo/
 ```
-### В файле /etc/nginx/conf.d/default.conf 
-
+### В файле /etc/nginx/conf.d/default.conf правим location:
+```
+ location / {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+        autoindex on;
+    }
+```
 
 
 

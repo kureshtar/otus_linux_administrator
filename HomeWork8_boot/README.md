@@ -11,7 +11,7 @@ ________________________________________________________________________________
 
 1.1 init=/bin/sh
 
-![img_1](https://github.com)
+![img_1]([https://github.com](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork8_boot/images/img1.JPG))
 ![img_11](https://github.com)
 
 1.2 rd.break

@@ -22,5 +22,5 @@ ________________________________________________________________________________
 
 1.3 rw init=/sysroot/bin/sh
 
-![img_23](https://github.com/)
-![img_24](https://github.com/)
+![img_4](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork8_boot/images/img4.JPG)
+

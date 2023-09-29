@@ -32,3 +32,9 @@ ________________________________________________________________________________
 
 ![img_7](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork8_boot/images/img7.JPG)
 
+## 2. Добавить модуль в initrd
+
+![img_8](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork8_boot/images/img8.JPG)
+
+![img_9](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork8_boot/images/img9.JPG)
+

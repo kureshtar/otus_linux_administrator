@@ -24,3 +24,5 @@ ________________________________________________________________________________
 
 ![img_4](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork8_boot/images/img4.JPG)
 
+## 2. Установить систему с LVM, после чего переименовать VG
+

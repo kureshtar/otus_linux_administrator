@@ -26,3 +26,9 @@ ________________________________________________________________________________
 
 ## 2. Установить систему с LVM, после чего переименовать VG
 
+![img_5](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork8_boot/images/img5.JPG)
+
+![img_6](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork8_boot/images/img6.JPG)
+
+![img_7](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork8_boot/images/img7.JPG)
+

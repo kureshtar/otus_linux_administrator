@@ -13,7 +13,7 @@ ________________________________________________________________________________
 
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork8_boot/images/img1.JPG)
 
-![img_2](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork8_boot/images/img1.JPG)
+![img_2](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork8_boot/images/img2.JPG)
 
 1.2 rd.break
 

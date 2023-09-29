@@ -17,7 +17,7 @@ ________________________________________________________________________________
 
 1.2 rd.break
 
-![img_2](https://github.com/)
+![img_3](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork8_boot/images/img3.JPG)
 
 
 1.3 rw init=/sysroot/bin/sh

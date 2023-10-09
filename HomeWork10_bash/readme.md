@@ -14,12 +14,10 @@ ___
 
 Ошибки веб-сервера/приложения c момента последнего запуска.
 ___
-<p><b>Скрипт</b> - <a href="https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork10_bash/mail_send.sh">send_mail.sh</a>
+<p><b>Скрипт</b> - <a href="https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork10_bash/mail_send.sh">mail_send.sh</a>
 
 <p><b>crontab</b></p>
   
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork10_bash/images/img1.JPG)
 
-<p><b>Результат выполнения скрипта</b></p>
 
-![img_2](https://)

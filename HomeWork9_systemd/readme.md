@@ -41,7 +41,7 @@ Unit-файл таймера, запускающего сервис каждые
 
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork9_systemd/images/Screenshot7.png)
 
-### Создание unit-файла сервиса из init-скрипта
+### 2. Установить spawn-fcgi и переписать init-скрипт на unit-файл.
 
 Установка spawn-fcgi и необходимых пакетов:
 ```

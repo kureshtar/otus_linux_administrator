@@ -38,30 +38,8 @@ Unit-файл таймера, запускающего сервис каждые
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork9_systemd/images/Screenshot6.png)
 
 Состояние сервисов:
-```
-[root@otus ~]# systemctl status watchlog.service
-● watchlog.service - Test watchlog service
-   Loaded: loaded (/usr/lib/systemd/system/watchlog.service; static; vendor preset: disabled)
-   Active: inactive (dead) since Fri 2022-07-01 00:41:37 UTC; 4s ago
-  Process: 28429 ExecStart=/opt/watchlog.sh $WORD $LOG (code=exited, status=0/SUCCESS)
- Main PID: 28429 (code=exited, status=0/SUCCESS)
 
-Jul 01 00:41:37 otus systemd[1]: Starting Test watchlog service...
-Jul 01 00:41:37 otus systemd[1]: Started Test watchlog service.
-[root@otus ~]# systemctl status watchlog.timer
-● watchlog.timer - Run watchlog script every 30 second
-   Loaded: loaded (/usr/lib/systemd/system/watchlog.timer; enabled; vendor preset: disabled)
-   Active: active (waiting) since Fri 2022-07-01 00:31:01 UTC; 10min ago
-
-Jul 01 00:31:01 otus systemd[1]: Started Run watchlog script every 30 second.
-[root@otus ~]# systemctl list-timers
-NEXT                         LEFT     LAST                         PASSED  UNIT                         ACTIVATES
-Fri 2022-07-01 00:42:07 UTC  7s left  Fri 2022-07-01 00:41:37 UTC  22s ago watchlog.timer               watchlog.service
-Fri 2022-07-01 14:25:48 UTC  13h left Thu 2022-06-30 14:25:48 UTC  10h ago systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.service
-
-2 timers listed.
-Pass --all to see loaded but inactive timers, too.
-```
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork9_systemd/images/Screenshot7.png)
 
 ### Создание unit-файла сервиса из init-скрипта
 

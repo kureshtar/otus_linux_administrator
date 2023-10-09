@@ -77,7 +77,7 @@ sed -i 's/#OPTIONS/OPTIONS/' /etc/sysconfig/spawn-fcgi
 
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork9_systemd/images/Screenshot10.png)
 
-### Конфигурация для запуска нескольких инстансов сервиса apache httpd
+### 3. Дополнить unit-файл httpd возможностью запустить несколько инстансов сервера с разными конфигурационными файлами.
 
 Подготовка Unit-файла:
 ```
@@ -102,58 +102,12 @@ sed -i 's|Listen 80|&82\nPidFile /var/run/httpd-second.pid|' /etc/httpd/conf/sec
 ```
 
 Запуск сервисов и их состояние после запуска:
-```
-[root@otus ~]# systemctl start httpd@first
-[root@otus ~]# systemctl start httpd@second
-[root@otus ~]# systemctl status httpd*
-● httpd@second.service - The Apache HTTP Server
-   Loaded: loaded (/usr/lib/systemd/system/httpd@.service; disabled; vendor preset: disabled)
-   Active: active (running) since Thu 2022-06-30 14:49:22 UTC; 10h ago
-     Docs: man:httpd(8)
-           man:apachectl(8)
- Main PID: 3414 (httpd)
-   Status: "Total requests: 0; Current requests/sec: 0; Current traffic:   0 B/sec"
-   CGroup: /system.slice/system-httpd.slice/httpd@second.service
-           ├─3414 /usr/sbin/httpd -f conf/second.conf -DFOREGROUND
-           ├─3415 /usr/sbin/httpd -f conf/second.conf -DFOREGROUND
-           ├─3416 /usr/sbin/httpd -f conf/second.conf -DFOREGROUND
-           ├─3417 /usr/sbin/httpd -f conf/second.conf -DFOREGROUND
-           ├─3418 /usr/sbin/httpd -f conf/second.conf -DFOREGROUND
-           ├─3419 /usr/sbin/httpd -f conf/second.conf -DFOREGROUND
-           └─3420 /usr/sbin/httpd -f conf/second.conf -DFOREGROUND
 
-Jun 30 14:49:22 otus systemd[1]: Starting The Apache HTTP Server...
-Jun 30 14:49:22 otus httpd[3414]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set th...is message
-Jun 30 14:49:22 otus systemd[1]: Started The Apache HTTP Server.
-
-● httpd@first.service - The Apache HTTP Server
-   Loaded: loaded (/usr/lib/systemd/system/httpd@.service; disabled; vendor preset: disabled)
-   Active: active (running) since Thu 2022-06-30 14:49:17 UTC; 10h ago
-     Docs: man:httpd(8)
-           man:apachectl(8)
- Main PID: 3401 (httpd)
-   Status: "Total requests: 0; Current requests/sec: 0; Current traffic:   0 B/sec"
-   CGroup: /system.slice/system-httpd.slice/httpd@first.service
-           ├─3401 /usr/sbin/httpd -f conf/first.conf -DFOREGROUND
-           ├─3402 /usr/sbin/httpd -f conf/first.conf -DFOREGROUND
-           ├─3403 /usr/sbin/httpd -f conf/first.conf -DFOREGROUND
-           ├─3404 /usr/sbin/httpd -f conf/first.conf -DFOREGROUND
-           ├─3405 /usr/sbin/httpd -f conf/first.conf -DFOREGROUND
-           ├─3406 /usr/sbin/httpd -f conf/first.conf -DFOREGROUND
-           └─3407 /usr/sbin/httpd -f conf/first.conf -DFOREGROUND
-
-Jun 30 14:49:16 otus systemd[1]: Starting The Apache HTTP Server...
-Jun 30 14:49:17 otus httpd[3401]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set th...is message
-Jun 30 14:49:17 otus systemd[1]: Started The Apache HTTP Server.
-Hint: Some lines were ellipsized, use -l to show in full.
-```
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork9_systemd/images/Screenshot11.png)
 
 Сконфигурированные ранее порты прослушиваются сервисами:
-```
-[root@otus ~]# ss -tnlp | grep httpd
-LISTEN     0      128       [::]:8081                  [::]:*                   users:(("httpd",pid=3407,fd=4),("httpd",pid=3406,fd=4),("httpd",pid=3405,fd=4),("httpd",pid=3404,fd=4),("httpd",pid=3403,fd=4),("httpd",pid=3402,fd=4),("httpd",pid=3401,fd=4))
-LISTEN     0      128       [::]:8082                  [::]:*                   users:(("httpd",pid=3420,fd=4),("httpd",pid=3419,fd=4),("httpd",pid=3418,fd=4),("httpd",pid=3417,fd=4),("httpd",pid=3416,fd=4),("httpd",pid=3415,fd=4),("httpd",pid=3414,fd=4))
-```
+
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork9_systemd/images/Screenshot12.png)
 
 # **Результаты**
 
@@ -162,4 +116,4 @@ LISTEN     0      128       [::]:8082                  [::]:*                   
 
 Полученный в ходе работы `Vagrantfile` и внешний скрипт `init.sh` для shell provisioner помещены в публичный репозиторий:
 
-- **GitHub** - https://github.com/jimidini77/otus-linux-day09
+- **GitHub** - https://github.com/kureshtar/otus_linux_administrator/tree/main/HomeWork9_systemd

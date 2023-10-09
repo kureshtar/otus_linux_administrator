@@ -14,7 +14,7 @@ ___
 
 Ошибки веб-сервера/приложения c момента последнего запуска.
 ___
-<p><b>Скрипт</b> - <a href="https://">send_mail.sh</a>
+<p><b>Скрипт</b> - <a href="https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork10_bash/mail_send.sh">send_mail.sh</a>
 
 <p><b>crontab</b></p>
   

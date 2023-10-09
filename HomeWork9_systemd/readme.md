@@ -114,6 +114,6 @@ sed -i 's|Listen 80|&82\nPidFile /var/run/httpd-second.pid|' /etc/httpd/conf/sec
 Выполняемые при конфигурировании сервера команды перенесены в bash-скрипт для автоматического конфигурирования машины при развёртывании.
 После развёртывания машины стартуют сервисы `watchlog.timer`, `spawn-fcgi.service`, `httpd@first.service`, `httpd@second.service`.
 
-Полученный в ходе работы `Vagrantfile` и внешний скрипт `init.sh` для shell provisioner помещены в публичный репозиторий:
+Полученный в ходе работы `Vagrantfile` и внешний скрипт `initscript.sh` для shell provisioner и другие сопутствующие файлы помещены в публичный репозиторий:
 
 - **GitHub** - https://github.com/kureshtar/otus_linux_administrator/tree/main/HomeWork9_systemd

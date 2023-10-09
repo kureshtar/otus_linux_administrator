@@ -74,51 +74,8 @@ sed -i 's/#OPTIONS/OPTIONS/' /etc/sysconfig/spawn-fcgi
 ```
 
 Запуск сервиса и его статус:
-```
-[root@otus ~]# systemctl start spawn-fcgi.service
-[root@otus ~]#
-[root@otus ~]# systemctl status spawn-fcgi.service
-● spawn-fcgi.service - Spawn-fcgi startup service by Otus
-   Loaded: loaded (/usr/lib/systemd/system/spawn-fcgi.service; disabled; vendor preset: disabled)
-   Active: active (running) since Thu 2022-06-30 14:21:01 UTC; 10h ago
- Main PID: 3122 (php-cgi)
-   CGroup: /system.slice/spawn-fcgi.service
-           ├─3122 /usr/bin/php-cgi
-           ├─3123 /usr/bin/php-cgi
-           ├─3124 /usr/bin/php-cgi
-           ├─3125 /usr/bin/php-cgi
-           ├─3126 /usr/bin/php-cgi
-           ├─3127 /usr/bin/php-cgi
-           ├─3128 /usr/bin/php-cgi
-           ├─3129 /usr/bin/php-cgi
-           ├─3130 /usr/bin/php-cgi
-           ├─3131 /usr/bin/php-cgi
-           ├─3132 /usr/bin/php-cgi
-           ├─3133 /usr/bin/php-cgi
-           ├─3134 /usr/bin/php-cgi
-           ├─3135 /usr/bin/php-cgi
-           ├─3136 /usr/bin/php-cgi
-           ├─3137 /usr/bin/php-cgi
-           ├─3138 /usr/bin/php-cgi
-           ├─3139 /usr/bin/php-cgi
-           ├─3140 /usr/bin/php-cgi
-           ├─3141 /usr/bin/php-cgi
-           ├─3142 /usr/bin/php-cgi
-           ├─3143 /usr/bin/php-cgi
-           ├─3144 /usr/bin/php-cgi
-           ├─3145 /usr/bin/php-cgi
-           ├─3146 /usr/bin/php-cgi
-           ├─3147 /usr/bin/php-cgi
-           ├─3148 /usr/bin/php-cgi
-           ├─3149 /usr/bin/php-cgi
-           ├─3150 /usr/bin/php-cgi
-           ├─3151 /usr/bin/php-cgi
-           ├─3152 /usr/bin/php-cgi
-           ├─3153 /usr/bin/php-cgi
-           └─3154 /usr/bin/php-cgi
 
-Jun 30 14:21:01 otus systemd[1]: Started Spawn-fcgi startup service by Otus.
-```
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork9_systemd/images/Screenshot10.png)
 
 ### Конфигурация для запуска нескольких инстансов сервиса apache httpd
 

@@ -12,12 +12,7 @@ ____________________________________________________
 ### Создание сервиса, выполняющего периодический мониторинг лога на предмет ключевого слова
 
 Создание файла конфигурации сервиса, используется ключевое слово `ALERT`:
-```
-cat >> /etc/sysconfig/watchlog << EOF
-WORD="ALERT"
-LOG=/var/log/watchlog.log
-EOF
-```
+
 <p><a href="https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork9_systemd/watchlog">watchlog</a> - /etc/sysconfig/watchlog</p>
 
 Исполняемый модуль сервиса:

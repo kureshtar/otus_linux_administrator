@@ -58,5 +58,6 @@ trap finish EXIT
 
 ###  **Результаты**
 
-Полученный скрипт mail_send.sh помещен в публичный репозиторий.
-Анализируемые логи  -  `/var/log/httpd/access_log` и '/var/log/httpd/error_log'
+Полученный скрипт <a href="https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork10_bash/mail_send.sh">mail_send.sh</a> помещен в публичный репозиторий.
+
+Анализируемые логи  -  `/var/log/httpd/access_log` и `/var/log/httpd/error_log`

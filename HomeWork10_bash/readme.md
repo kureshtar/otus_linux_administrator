@@ -18,7 +18,7 @@ ___
 
 <p><b>crontab</b></p>
   
-![img_1](https://)
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork10_bash/images/img1.JPG)
 
 <p><b>Результат выполнения скрипта</b></p>
 

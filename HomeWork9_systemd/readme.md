@@ -17,15 +17,15 @@ ____________________________________________________
 
 Исполняемый модуль сервиса:
 
-<p><a href="https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork9_systemd/watchlog.sh">watchlog</a> - /etc/sysconfig/watchlog</p>
+<p><a href="https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork9_systemd/watchlog.sh">watchlog.sh</a> - /opt/watchlog.sh</p>
 
 Unit-файл сервиса:
 
-<p><a href="https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork9_systemd/watchlog.service">watchlog</a> - /etc/sysconfig/watchlog</p>
+<p><a href="https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork9_systemd/watchlog.service">watchlog.service</a> - /etc/systemd/system/watchlog.service</p>
 
 Unit-файл таймера, запускающего сервис каждые 30 секунд:
 
-<p><a href="https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork9_systemd/watchlog.time">watchlog</a> - /etc/sysconfig/watchlog</p>
+<p><a href="https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork9_systemd/watchlog.time">watchlog.timer</a> - /etc/systemd/system/watchlog.timer</p>
 
 При запуске таймера и записи ключевого слова в лог:
 ```

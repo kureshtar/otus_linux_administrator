@@ -16,53 +16,17 @@ ____________________________________________________
 <p><a href="https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork9_systemd/watchlog">watchlog</a> - /etc/sysconfig/watchlog</p>
 
 Исполняемый модуль сервиса:
-```
-cat >> /opt/watchlog.sh << EOF
-#!/bin/bash
 
-WORD=\$1
-LOG=\$2
-DATE=\`date\`
-
-if grep \$WORD \$LOG &> /dev/null
-then
-    logger "\$DATE: Keyword found in log"
-else
-    exit 0
-fi
-EOF
-chmod +x /opt/watchlog.sh
-```
+<p><a href="https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork9_systemd/watchlog.sh">watchlog</a> - /etc/sysconfig/watchlog</p>
 
 Unit-файл сервиса:
-```
-cat >> /lib/systemd/system/watchlog.service << EOF
-[Unit]
-Description=Test watchlog service
 
-[Service]
-Type=oneshot
-EnvironmentFile=/etc/sysconfig/watchlog
-ExecStart=/opt/watchlog.sh \$WORD \$LOG
-EOF
-```
+<p><a href="https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork9_systemd/watchlog.service">watchlog</a> - /etc/sysconfig/watchlog</p>
 
 Unit-файл таймера, запускающего сервис каждые 30 секунд:
-```
-cat >> /lib/systemd/system/watchlog.timer << EOF
-[Unit]
-Description=Run watchlog script every 30 second
-Requires=watchlog.service
 
-[Timer]
-#Run every 30 seconds
-OnUnitActiveSec=30
-Unit=watchlog.service
+<p><a href="https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork9_systemd/watchlog.time">watchlog</a> - /etc/sysconfig/watchlog</p>
 
-[Install]
-WantedBy=multi-user.target
-EOF
-```
 При запуске таймера и записи ключевого слова в лог:
 ```
 [root@otus ~]# systemctl start watchlog.timer
@@ -70,19 +34,8 @@ EOF
 ```
 
 В системном журнале сообщения:
-```
-[root@otus ~]# tail -f /var/log/messages
-Jul  1 00:34:35 localhost systemd: Started Test watchlog service.
-Jul  1 00:35:05 localhost systemd: Starting Test watchlog service...
-Jul  1 00:35:06 localhost root: Fri Jul  1 00:35:06 UTC 2022: Keyword found in log
-Jul  1 00:35:06 localhost systemd: Started Test watchlog service.
-Jul  1 00:35:36 localhost systemd: Starting Test watchlog service...
-Jul  1 00:35:36 localhost root: Fri Jul  1 00:35:36 UTC 2022: Keyword found in log
-Jul  1 00:35:36 localhost systemd: Started Test watchlog service.
-Jul  1 00:36:06 localhost systemd: Starting Test watchlog service...
-Jul  1 00:36:06 localhost root: Fri Jul  1 00:36:06 UTC 2022: Keyword found in log
-Jul  1 00:36:06 localhost systemd: Started Test watchlog service.
-```
+
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork9_systemd/images/Screenshot6.png)
 
 Состояние сервисов:
 ```

@@ -1,9 +1,11 @@
 #!/bin/bash
+#VARIABLES_BEGIN
 DATE=$(date -d '1 hour ago' "+%d/%m/%Y %H:00:00")
 ACCESS_LOG='/var/log/httpd/access_log'
 ERROR_LOG='/var/log/httpd/error_log'
-
 RUN_FLAG=/tmp/watchdog.run
+#VARIABLES_END
+
 function finish {
     rm -f "$RUN_FLAG";
     exit 0;

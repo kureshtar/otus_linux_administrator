@@ -18,3 +18,11 @@ proc=$(ls /proc | grep -E "^[0-9]+$")
 ```
 clk_tck=$(getconf CLK_TCK)
 ```
+Перебираем в цикле значения всех pid из переменной $proc:
+```
+for pid in $proc; do
+```
+и если есть реальный каталог с текущим pid-ом:
+```
+ if [ -d /proc/$pid ]; then
+```

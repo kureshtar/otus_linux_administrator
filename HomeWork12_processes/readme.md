@@ -29,6 +29,7 @@ for pid in $proc; do
  if [ -d /proc/$pid ]; then
 ```
 Далее в цикле, если каталог с текущим pid существует, получаем значения tty, state, time, cmd, данные для которых берем из файла /proc/$pid/stat
+https://stackoverflow.com/questions/39066998/what-are-the-meaning-of-values-at-proc-pid-stat
 ```
     stat=$(</proc/$pid/stat)
     cmd=$(echo "$stat" | awk -F" " '{print $2}')

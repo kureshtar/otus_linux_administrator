@@ -14,3 +14,11 @@
 
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork15_Ansible/images/Screenshot%20from%202023-11-08%2017-04-05.png)
 
+Конфигурационный файл Ansible содержит параметры подключения:
+```
+[defaults]
+inventory = staging/hosts
+remote_user = vagrant
+host_key_checking = False
+retry_files_enabled = False
+```

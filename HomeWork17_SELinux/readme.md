@@ -28,11 +28,9 @@ vagrant box add centos7 CentOS-7-x86_64-Vagrant-2004_01.VirtualBox.box
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork17_SELinux/images/Screenshot%20from%202023-11-14%2017-05-44.png)
 
 Проверка конфига nginx:
-```
-[root@selinux ~]# nginx -t
-nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
-nginx: configuration file /etc/nginx/nginx.conf test is successful
-```
+
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork17_SELinux/images/Screenshot%20from%202023-11-14%2017-06-17.png)
+
 Проверка режима работы SELinux:
 ```
 [root@selinux ~]# getenforce

@@ -90,55 +90,13 @@ pegasus_https_port_t           tcp      5989
 http_port_t                    tcp      4881, 80, 81, 443, 488, 8008, 8009, 8443, 9000
 pegasus_http_port_t            tcp      5988
 ```
-рестарт nginx:
+Успешный рестарт nginx:
 
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork17_SELinux/images/Screenshot%20from%202023-11-15%2009-01-36.png)
 
-nginx слушает порт и отдаёт данные:
-```sh
-[root@selinux ~]# ss -tnlp | grep 4881
-LISTEN     0      128       [::]:4881                  [::]:*                   users:(("nginx",pid=21946,fd=7),("nginx",pid=21945,fd=7))
-[root@selinux ~]#
-[root@selinux ~]#
-[root@selinux ~]# curl -I http://localhost:4881
-HTTP/1.1 200 OK
-Server: nginx/1.20.1
-Date: Tue, 02 Aug 2022 12:08:28 GMT
-Content-Type: text/html
-Content-Length: 4833
-Last-Modified: Fri, 16 May 2014 15:12:48 GMT
-Connection: keep-alive
-ETag: "53762af0-12e1"
-Accept-Ranges: bytes
-```
+Возврат состояния параметра для следующего способа:
 
-Возврат состояния параметра и остановка nginx для следующего способа:
-```sh
-[root@selinux ~]# semanage port -d -t http_port_t -p tcp 4881
-[root@selinux ~]# semanage port -l| grep http_port_t
-http_port_t                    tcp      80, 81, 443, 488, 8008, 8009, 8443, 9000
-pegasus_http_port_t            tcp      5988
-[root@selinux ~]# systemctl restart nginx.service
-Job for nginx.service failed because the control process exited with error code. See "systemctl status nginx.service" and "journalctl -xe" for details.
-[root@selinux ~]# systemctl status nginx.service
-● nginx.service - The nginx HTTP and reverse proxy server
-   Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; vendor preset: disabled)
-   Active: failed (Result: exit-code) since Tue 2022-08-02 18:34:46 UTC; 14s ago
-  Process: 21943 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)
-  Process: 22111 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=1/FAILURE)
-  Process: 22109 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
- Main PID: 21945 (code=exited, status=0/SUCCESS)
-
-Aug 02 18:34:46 selinux systemd[1]: Stopped The nginx HTTP and reverse proxy server.
-Aug 02 18:34:46 selinux systemd[1]: Starting The nginx HTTP and reverse proxy server...
-Aug 02 18:34:46 selinux nginx[22111]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
-Aug 02 18:34:46 selinux nginx[22111]: nginx: [emerg] bind() to [::]:4881 failed (13: Permission denied)
-Aug 02 18:34:46 selinux nginx[22111]: nginx: configuration file /etc/nginx/nginx.conf test failed
-Aug 02 18:34:46 selinux systemd[1]: nginx.service: control process exited, code=exited status=1
-Aug 02 18:34:46 selinux systemd[1]: Failed to start The nginx HTTP and reverse proxy server.
-Aug 02 18:34:46 selinux systemd[1]: Unit nginx.service entered failed state.
-Aug 02 18:34:46 selinux systemd[1]: nginx.service failed.
-```
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork17_SELinux/images/Screenshot%20from%202023-11-15%2009-03-05.png)
 
 ### **Способ 3** Разрешение c помощью формирования и установки модуля SELinux
 

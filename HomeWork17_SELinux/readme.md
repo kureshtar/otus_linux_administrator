@@ -91,25 +91,9 @@ http_port_t                    tcp      4881, 80, 81, 443, 488, 8008, 8009, 8443
 pegasus_http_port_t            tcp      5988
 ```
 рестарт nginx:
-```sh
-[root@selinux ~]# systemctl start nginx.service
-[root@selinux ~]# systemctl status nginx.service
-● nginx.service - The nginx HTTP and reverse proxy server
-   Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; vendor preset: disabled)
-   Active: active (running) since Tue 2022-08-02 12:06:46 UTC; 14s ago
-  Process: 21943 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)
-  Process: 21940 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
-  Process: 21939 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
- Main PID: 21945 (nginx)
-   CGroup: /system.slice/nginx.service
-           ├─21945 nginx: master process /usr/sbin/nginx
-           └─21946 nginx: worker process
 
-Aug 02 12:06:46 selinux systemd[1]: Starting The nginx HTTP and reverse proxy server...
-Aug 02 12:06:46 selinux nginx[21940]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
-Aug 02 12:06:46 selinux nginx[21940]: nginx: configuration file /etc/nginx/nginx.conf test is successful
-Aug 02 12:06:46 selinux systemd[1]: Started The nginx HTTP and reverse proxy server.
-```
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork17_SELinux/images/Screenshot%20from%202023-11-15%2009-01-36.png)
+
 nginx слушает порт и отдаёт данные:
 ```sh
 [root@selinux ~]# ss -tnlp | grep 4881

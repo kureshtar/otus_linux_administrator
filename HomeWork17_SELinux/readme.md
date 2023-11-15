@@ -51,7 +51,7 @@ LISTEN     0      128       [::]:4881                  [::]:*                   
 [root@selinux ~]# curl -I http://localhost:4881
 HTTP/1.1 200 OK
 Server: nginx/1.20.1
-Date: Tue, 02 Aug 2022 11:02:16 GMT
+Date: Tue, 15 Nov 2023 13:20:16 GMT
 Content-Type: text/html
 Content-Length: 4833
 Last-Modified: Fri, 16 May 2014 15:12:48 GMT
@@ -59,6 +59,9 @@ Connection: keep-alive
 ETag: "53762af0-12e1"
 Accept-Ranges: bytes
 ```
+
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork17_SELinux/images/Screenshot%20from%202023-11-15%2008-56-06.png)
+
 Текущее состояние параметра политики SELinux:
 ```sh
 [root@selinux ~]# getsebool -a | grep nis_enabled

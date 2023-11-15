@@ -63,14 +63,13 @@ Accept-Ranges: bytes
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork17_SELinux/images/Screenshot%20from%202023-11-15%2008-56-06.png)
 
 Текущее состояние параметра политики SELinux:
-```sh
-[root@selinux ~]# getsebool -a | grep nis_enabled
-nis_enabled --> on
-```
+
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork17_SELinux/images/Screenshot%20from%202023-11-15%2008-57-14.png)
+
 Возврат состояния параметра и остановка nginx для следующего способа:
 ```sh
 [root@selinux ~]# setsebool -P nis_enabled off
-[root@selinux ~]# systemctl stop nginx.service
+[root@selinux ~]# systemctl restart nginx.service
 ```
 
 ### **Способ 2** Разрешение c помощью добавления нестандартного порта в имеющийся тип

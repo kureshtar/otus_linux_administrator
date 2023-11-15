@@ -35,18 +35,9 @@ vagrant box add centos7 CentOS-7-x86_64-Vagrant-2004_01.VirtualBox.box
 
 ### **Способ 1** Разрешение c помощью переключателей setsebool
 В логах аудита информация о блокировании порта анализируется утилитой `audit2why`:
-```sh
-[root@selinux ~]# grep 4881 /var/log/audit/audit.log | audit2why
-type=AVC msg=audit(1659436661.782:804): avc:  denied  { name_bind } for  pid=2788 comm="nginx" src=4881 scontext=system_u:system_r:httpd_t:s0 tcontext=system_u:object_r:unreserved_port_t:s0 tclass=tcp_socket permissive=0
 
-        Was caused by:
-        The boolean nis_enabled was set incorrectly.
-        Description:
-        Allow nis to enabled
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork17_SELinux/images/Screenshot%20from%202023-11-14%2017-15-55.png)
 
-        Allow access by executing:
-        # setsebool -P nis_enabled 1
-```
 Установка рекомендованного параметра и рестарт nginx:
 ```sh
 [root@selinux ~]# setsebool -P nis_enabled 1

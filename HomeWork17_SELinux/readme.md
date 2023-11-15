@@ -177,7 +177,6 @@ nis     1.12.0
 
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork17_SELinux/images/Screenshot%20from%202023-11-15%2009-47-03.png)
 
-![Screenshot](https://github.com/jimidini77/otus-linux-day17/blob/main/Screenshot.png?raw=true)
 
 # **Результаты**
 Выполнен запуск nginx на нестандартном порту:
@@ -188,5 +187,3 @@ nis     1.12.0
 Предпочтительным является второй способ, позволяющий более точно и осознано выполнять настройку SELinux.
 
 На тестовом стенде содержащем неправильную конфигурацию, выполнена диагностика ошибки SELinux и внесено исправление в контекст безопасности файлов конфигурации DNS-сервера.
-
-- **GitHub** - https://github.com/jimidini77/otus-linux-day17

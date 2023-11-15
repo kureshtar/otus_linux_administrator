@@ -16,7 +16,7 @@
 vagrant box add centos7 CentOS-7-x86_64-Vagrant-2004_01.VirtualBox.box
 
 На этапе разворачивание машины получены сообщения об ошибках. SELinux блокирует работу сервиса на нестандартном порту:
-![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork15_Ansible/images/Screenshot%20from%202023-11-08%2017-04-05.png)
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork17_SELinux/images/Screenshot%20from%202023-11-14%2017-03-49.png)
 
 Проверка состояния файрвола:
 ```

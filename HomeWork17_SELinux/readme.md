@@ -122,7 +122,7 @@ LISTEN     0      128       [::]:4881                  [::]:*                   
 [root@selinux ~]# curl -I http://localhost:4881
 HTTP/1.1 200 OK
 Server: nginx/1.20.1
-Date: Tue, 02 Aug 2022 18:46:21 GMT
+Date: Tue, 15 Nov 2023 05:10:21 GMT
 Content-Type: text/html
 Content-Length: 4833
 Last-Modified: Fri, 16 May 2014 15:12:48 GMT
@@ -144,20 +144,10 @@ nis     1.12.0
 ## Обеспечить работоспособность приложения, развернутого из приложенного стенда, при включенном SELinux
 
 Склонирован репозиторий, развёрнут стенд `selinux_dns_problems`:
-```sh
-root@nas:~/work# git clone https://github.com/mbfx/otus-linux-adm.git
-root@nas:~/work# cd otus-linux-adm/selinux_dns_problems
-root@nas:~/work/otus-linux-adm/selinux_dns_problems# vagrant up
-root@nas:~/work/otus-linux-adm/selinux_dns_problems# vagrant status
-Current machine states:
 
-ns01                      running (virtualbox)
-client                    running (virtualbox)
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork17_SELinux/images/Screenshot%20from%202023-11-15%2009-18-28.png)
 
-This environment represents multiple VMs. The VMs are all listed
-above with their current state. For more information about a specific
-VM, run `vagrant status NAME`.
-```
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork17_SELinux/images/Screenshot%20from%202023-11-15%2009-20-28.png)
 
 На машине `client` при попытке внесения изменений в зону - ошибка:
 ```

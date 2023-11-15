@@ -110,26 +110,8 @@ semodule -i nginx.pp
 ```
 
 Применение сформированного модуля и запуск `nginx`:
-```sh
-[root@selinux ~]# semodule -i nginx.pp
-[root@selinux ~]# systemctl start nginx.service
-[root@selinux ~]# systemctl status nginx.service
-● nginx.service - The nginx HTTP and reverse proxy server
-   Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; vendor preset: disabled)
-   Active: active (running) since Tue 2022-08-02 18:44:47 UTC; 7s ago
-  Process: 22266 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)
-  Process: 22263 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
-  Process: 22262 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
- Main PID: 22268 (nginx)
-   CGroup: /system.slice/nginx.service
-           ├─22268 nginx: master process /usr/sbin/nginx
-           └─22269 nginx: worker process
 
-Aug 02 18:44:47 selinux systemd[1]: Starting The nginx HTTP and reverse proxy server...
-Aug 02 18:44:47 selinux nginx[22263]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
-Aug 02 18:44:47 selinux nginx[22263]: nginx: configuration file /etc/nginx/nginx.conf test is successful
-Aug 02 18:44:47 selinux systemd[1]: Started The nginx HTTP and reverse proxy server.
-```
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork17_SELinux/images/Screenshot%20from%202023-11-15%2009-05-36.png)
 
 nginx слушает порт и отдаёт данные:
 ```sh

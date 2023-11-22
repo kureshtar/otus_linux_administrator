@@ -43,6 +43,22 @@ RUN apk update
 COPY ./index.html /usr/share/nginx/html/index.html
 ```
 
+Содержимое кастомного файла `index.html`:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>NGINX</title>
+</head>
+<body>
+    Server is online
+</body>
+</html>
+```
+
+
 Сборка образа:
 ```
 docker build -t my-nginx:v1 .
@@ -66,6 +82,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 [root@otus mynginx]# ss -tnlp | grep 80
 LISTEN     0      128       [::]:80                    [::]:*                   users:(("docker-proxy-cu",pid=29672,fd=4))
 ```
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork18_docker/images/Screenshot%20from%202023-11-22%2009-47-39.png)
 
 При запросе к 80 порту хостовой ОС nginx из контейнера отдаёт страницу:
 ```
@@ -81,19 +98,8 @@ LISTEN     0      128       [::]:80                    [::]:*                   
 </body>
 </html>
 ```
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork18_docker/images/Screenshot%20from%202023-11-22%2009-47-55.png)
 
 Загрузка созданного образа в Docker Hub:
-```
-[root@otus mynginx]# docker login --username kentro
-Password:
-Login Succeeded
-[root@otus mynginx]# docker tag my-nginx:v1 kentro/docker-day18:nginx
-[root@otus mynginx]# docker push kentro/docker-day18:nginx
-The push refers to a repository [docker.io/kentro/docker-day18]
-5915ee3e31c5: Pushed
-8adb465b142c: Pushed
-8607ed268395: Pushed
-24302eb7d908: Mounted from library/alpine
-nginx: digest: sha256:2e62b8da0fbec05868dcb988a3e4bd040963b0bbfceeaa2d37507054b0d8eab4 size: 1153
-```
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork18_docker/images/Screenshot%20from%202023-11-22%2010-06-25.png)
 

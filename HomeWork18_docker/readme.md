@@ -64,7 +64,7 @@ COPY ./index.html /usr/share/nginx/html/index.html
 docker build -t my-nginx:v1 .
 ```
 
-Запуск контейнера из образа `docker-nginx:v1` с пробросом портов 8080 из контейнера на 80 хостовой ОС:
+Запуск контейнера из образа `docker-nginx:v1` с пробросом портов 80 из контейнера на 80 хостовой ОС:
 ```
 docker run -d -p 0.0.0.0:80:80 my-nginx:v1
 ```

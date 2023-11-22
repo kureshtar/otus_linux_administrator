@@ -47,6 +47,7 @@ COPY ./index.html /usr/share/nginx/html/index.html
 ```
 docker build -t my-nginx:v1 .
 ```
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork18_docker/images/Screenshot%20from%202023-11-22%2009-47-11.png)
 
 Запуск контейнера из образа `docker-nginx:v1` с пробросом портов 8080 из контейнера на 80 хостовой ОС:
 ```

@@ -8,7 +8,7 @@
 1. Загрузите образ (без запуска) используя команду docker pull kentro/docker-day18:nginx
 2. Запустите контейнер, используйте команду docker run -d -p 80:80 --name web1 kentro/docker-day18:nginx
 3. Для проверки работоспособности контейнера используйте команду curl -a http://localhost:80
-![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork18_docker/images/Screenshot%20from%202023-11-22%2009-47-39.png)
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork18_docker/images/Screenshot%20from%202023-11-22%2010-06-25.png)
 
 # **Выполнение**
 

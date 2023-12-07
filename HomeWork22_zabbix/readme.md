@@ -12,6 +12,7 @@
 ## Установка Zabbix
 Установил Zabbix по этой инструкции:
 https://www.zabbix.com/download?zabbix=6.4&os_distribution=ubuntu&os_version=22.04&components=server_frontend_agent&db=mysql&ws=apache
+
 Перед выполнением пункта "C. Create initial database"  нужно поставить mysql командой (для Ubuntu):
 ```
 sudo apt-get install mysql-server

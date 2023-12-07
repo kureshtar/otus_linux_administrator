@@ -1,5 +1,5 @@
-# otus-linux-day22
-Системы мониторинга. Zabbix. Prometheus.
+# Zabbix
+Системы мониторинга. Zabbix. 
 
 # **Содержание ДЗ**
 

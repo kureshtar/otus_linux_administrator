@@ -74,10 +74,12 @@ systemctl status nginx
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/images/Screenshot%20from%202024-01-22%2022-29-27.png)
 
 
-3. Настройка центрального сервера сбора логов
+### 3. Настройка центрального сервера сбора логов
 
-
-Откроем еще одно окно терминала и подключаемся по ssh к ВМ log: vagrant ssh log
+Откроем еще одно окно терминала и подключаемся по ssh к ВМ log: 
+```
+vagrant ssh log
+```
 Перейдем в пользователя root: sudo -i
 rsyslog должен быть установлен по умолчанию в нашей ОС, проверим это:
 

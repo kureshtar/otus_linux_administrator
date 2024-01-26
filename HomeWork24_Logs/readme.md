@@ -25,13 +25,25 @@ ___
 Заходим на web-сервер: vagrant ssh web
 Дальнейшие действия выполняются от пользователя root. Переходим в root пользователя: sudo -i
 Для правильной работы c логами, нужно, чтобы на всех хостах было настроено одинаковое время. 
-Укажем часовой пояс (Московское время):                                     cp /usr/share/zoneinfo/Europe/Moscow /etc/localtime
-Перезупустим службу NTP Chrony: systemctl restart chronyd
-Проверим, что служба работает корректно: systemctl status chronyd
-
-Далее проверим, что время и дата указаны правильно: date
-
+Укажем часовой пояс (Московское время):
+```
+cp /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+```
+Перезупустим службу NTP Chrony: 
+```
+systemctl restart chronyd
+```
+Проверим, что служба работает корректно: 
+```
+systemctl status chronyd
+```
+Далее проверим, что время и дата указаны правильно:
+```
+date
+```
 Настроить NTP нужно на обоих серверах.
+
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/images/Screenshot%20from%202024-01-22%2022-26-55.png)
 
 Также, для удобства редактирования конфигурационных файлов можно установить текстовый редактор vim: yum install -y vim
 

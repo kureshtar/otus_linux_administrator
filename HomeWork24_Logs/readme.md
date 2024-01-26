@@ -80,9 +80,15 @@ systemctl status nginx
 ```
 vagrant ssh log
 ```
-Перейдем в пользователя root: sudo -i
+Перейдем в пользователя root: 
+```
+sudo -i
+```
 rsyslog должен быть установлен по умолчанию в нашей ОС, проверим это:
-
+```
+yum list rsyslog
+```
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/images/Screenshot%20from%202024-01-22%2022-33-50.png)
 
 Все настройки Rsyslog хранятся в файле /etc/rsyslog.conf 
 Для того, чтобы наш сервер мог принимать логи, нам необходимо внести следующие изменения в файл: 

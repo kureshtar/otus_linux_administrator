@@ -118,6 +118,8 @@ systemctl restart rsyslog
 ```
 Если ошибок не допущено, то у нас будут видны открытые порты TCP,UDP 514:
 
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/images/Screenshot%20from%202024-01-22%2022-36-15.png)
+
 Далее настроим отправку логов с web-сервера
 Заходим на web сервер: vagrant ssh web
 Переходим в root пользователя: sudo -i 

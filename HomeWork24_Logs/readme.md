@@ -1,5 +1,5 @@
 # Основы сбора и хранения логов
-### **Содержание ДЗ**
+## **Содержание ДЗ**
 
 1. В Vagrant разворачиваем 2 виртуальные машины web и log
 2. на web настраиваем nginx
@@ -15,9 +15,9 @@ elk.
 
 ___
 
-### **Выполнение**
+## **Выполнение**
 
-1. Создаём виртуальные машины
+### 1. Создаём виртуальные машины
 Создаём каталог, в котором будут храниться настройки виртуальной машины. В каталоге создаём файл с именем Vagrantfile, добавляем в него следующее [содержимое](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/Vagrantfile).
 
 
@@ -47,13 +47,25 @@ date
 
 Также, для удобства редактирования конфигурационных файлов можно установить текстовый редактор vim: yum install -y vim
 
-2. Установка nginx на виртуальной машине web
-Для установки nginx сначала нужно установить epel-release: yum install epel-release 
+### 2. Установка nginx на виртуальной машине web
+Для установки nginx сначала нужно установить epel-release:
 
+```
+yum install epel-release 
+```
 
-Установим nginx: yum install -y nginx  
+Установим nginx: 
 
+```
+yum install -y nginx  
+```
 Проверим, что nginx работает корректно:
+
+```
+systemctl status nginx
+```
+
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/images/Screenshot%20from%202024-01-22%2022-28-56.png)
 
 
 Также работу nginx можно проверить на хосте. В браузере ввведем в адерсную строку http://192.168.50.10 
@@ -151,7 +163,7 @@ cat /var/log/rsyslog/web/nginx_error.log
 Перезапустим службу auditd: service auditd restart
 На этом настройка пересылки логов аудита закончена. Можем попробовать поменять атрибут у файла /etc/nginx/nginx.conf и проверить на log-сервере, что пришла информация об изменении атрибута:
 
-###  **Результаты**
+##  **Результаты**
 
 Полученный скрипт <a href="https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork10_bash/mail_send.sh">mail_send.sh</a> помещен в публичный репозиторий.
 

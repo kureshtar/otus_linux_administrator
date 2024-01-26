@@ -109,8 +109,13 @@ yum list rsyslog
 
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/images/sn3.PNG)
 
-Данные параметры будут отправлять в папку /var/log/rsyslog логи, которые будут приходить от других серверов. Например, Access-логи nginx от сервера web, будут идти в файл /var/log/rsyslog/web/nginx_access.log
-Далее сохраняем файл и перезапускаем службу rsyslog: systemctl restart rsyslog
+Данные параметры будут отправлять в папку /var/log/rsyslog логи, которые будут приходить от других серверов. 
+Например, Access-логи nginx от сервера web, будут идти в файл /var/log/rsyslog/web/nginx_access.log
+
+Далее сохраняем файл [/etc/rsyslog.conf](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/rsyslog.conf) и перезапускаем службу rsyslog:
+```
+systemctl restart rsyslog
+```
 Если ошибок не допущено, то у нас будут видны открытые порты TCP,UDP 514:
 
 Далее настроим отправку логов с web-сервера

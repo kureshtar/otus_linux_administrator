@@ -90,15 +90,24 @@ yum list rsyslog
 ```
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/images/Screenshot%20from%202024-01-22%2022-33-50.png)
 
-Все настройки Rsyslog хранятся в файле /etc/rsyslog.conf 
+Все настройки Rsyslog хранятся в файле 
+````
+/etc/rsyslog.conf 
+```
 Для того, чтобы наш сервер мог принимать логи, нам необходимо внести следующие изменения в файл: 
 Открываем порт 514 (TCP и UDP):
 Находим закомментированные строки:
 
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/images/sn01.PNG)
+
 И приводим их к виду:
 
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/images/sn2.PNG)
 
 В конец файла /etc/rsyslog.conf добавляем правила приёма сообщений от хостов:
+
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/images/sn3.PNG)
+
 Данные параметры будут отправлять в папку /var/log/rsyslog логи, которые будут приходить от других серверов. Например, Access-логи nginx от сервера web, будут идти в файл /var/log/rsyslog/web/nginx_access.log
 Далее сохраняем файл и перезапускаем службу rsyslog: systemctl restart rsyslog
 Если ошибок не допущено, то у нас будут видны открытые порты TCP,UDP 514:

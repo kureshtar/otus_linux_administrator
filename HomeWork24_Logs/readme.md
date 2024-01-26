@@ -120,12 +120,25 @@ systemctl restart rsyslog
 
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/images/Screenshot%20from%202024-01-22%2022-36-15.png)
 
-Далее настроим отправку логов с web-сервера
-Заходим на web сервер: vagrant ssh web
-Переходим в root пользователя: sudo -i 
-Проверим версию nginx: rpm -qa | grep nginx
+Далее настроим отправку логов с web-сервера.
+Заходим на web сервер: 
+```
+vagrant ssh web
+```
 
-Версия nginx должна быть 1.7 или выше. В нашем примере используется версия nginx 1.20. 
+Переходим в root пользователя: 
+```
+sudo -i 
+```
+Проверим версию nginx: 
+```
+rpm -qa | grep nginx
+```
+Версия nginx должна быть 1.7 или выше. 
+В нашем примере используется версия nginx 1.20. 
+
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/images/sn4.PNG)
+
 Находим в файле /etc/nginx/nginx.conf раздел с логами и приводим их к следующему виду:
 
 Для Access-логов указыаем удаленный сервер и уровень логов, которые нужно отправлять. Для error_log добавляем удаленный сервер. Если требуется чтобы логи хранились локально и отправлялись на удаленный сервер, требуется указать 2 строки. 	

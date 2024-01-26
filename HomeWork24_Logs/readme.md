@@ -71,7 +71,7 @@ systemctl status nginx
 Также работу nginx можно проверить на хосте. В браузере ввведем в адерсную строку http://192.168.50.10 
 Видим что nginx запустился корректно.
 
-
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/images/Screenshot%20from%202024-01-22%2022-29-27.png)
 
 
 3. Настройка центрального сервера сбора логов

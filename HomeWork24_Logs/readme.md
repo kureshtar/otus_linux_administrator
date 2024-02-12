@@ -196,41 +196,48 @@ service auditd restart
 ausearch -f /etc/nginx/nginx.confq
 ```
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/images/Screenshot%20from%202024-01-22%2022-49-32.png)
+
 Также можно воспользоваться поиском по файлу /var/log/audit/audit.log, указав наш тэг: grep nginx_conf /var/log/audit/audit.log
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/images/Screenshot%20from%202024-01-22%2022-49-45.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-Далее настроим пересылку логов на удаленный сервер. Auditd по умолчанию не умеет пересылать логи, для пересылки на web-сервере потребуется установить пакет audispd-plugins: yum -y install audispd-plugins
+Далее настроим пересылку логов на удаленный сервер. Auditd по умолчанию не умеет пересылать логи, для пересылки на web-сервере потребуется установить пакет audispd-plugins: 
+```
+yum -y install audispd-plugins
+```
 
 Найдем и поменяем следующие строки в файле /etc/audit/auditd.conf: 
-
+```
+log_format = RAW
+name_format = HOSTNAME
+```
 
 В name_format  указываем HOSTNAME, чтобы в логах на удаленном сервере отображалось имя хоста. 
 В файле /etc/audisp/plugins.d/au-remote.conf поменяем параметр active на yes:
+```
+active = yes
+```
 
 В файле /etc/audisp/audisp-remote.conf требуется указать адрес сервера и порт, на который будут отправляться логи:
-
-Далее перезапускаем службу auditd: service auditd restart
+```
+remote_server = 192.168.56.15 
+port = 60
+```
+Далее перезапускаем службу auditd: 
+```
+service auditd restart
+```
 На этом настройка web-сервера завершена. Далее настроим Log-сервер. 
 
 Отроем порт TCP 60, для этого уберем значки комментария в файле /etc/audit/auditd.conf:
-
-
-Перезапустим службу auditd: service auditd restart
+```
+tcp_listen_port = 60
+```
+Перезапустим службу auditd: 
+```
+service auditd restart
+```
 На этом настройка пересылки логов аудита закончена. Можем попробовать поменять атрибут у файла /etc/nginx/nginx.conf и проверить на log-сервере, что пришла информация об изменении атрибута:
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/images/Screenshot%20from%202024-01-22%2022-53-11.png)
 
-##  **Результаты**
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/images/Screenshot%20from%202024-01-22%2022-53-31.png)
 
-Полученный скрипт <a href="https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork10_bash/mail_send.sh">mail_send.sh</a> помещен в публичный репозиторий.
-
-Анализируемые логи  -  `/var/log/httpd/access_log` и `/var/log/httpd/error_log`

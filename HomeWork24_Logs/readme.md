@@ -140,19 +140,30 @@ rpm -qa | grep nginx
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/images/sn4.PNG)
 
 Находим в файле /etc/nginx/nginx.conf раздел с логами и приводим их к следующему виду:
+error_log /var/log/nginx/error.log;
+error_log syslog:server=192.168.56.15:514,tag=nginx_error;
+access_log syslog:server=192.168.56.15:514,tag=nginx_access,severity=info combined;
 
 Для Access-логов указыаем удаленный сервер и уровень логов, которые нужно отправлять. Для error_log добавляем удаленный сервер. Если требуется чтобы логи хранились локально и отправлялись на удаленный сервер, требуется указать 2 строки. 	
 Tag нужен для того, чтобы логи записывались в разные файлы.
 По умолчанию, error-логи отправляют логи, которые имеют severity: error, crit, alert и emerg. Если трубуется хранили или пересылать логи с другим severity, то это также можно указать в настройках nginx. 
-Далее проверяем, что конфигурация nginx указана правильно: nginx -t
-
-Далее перезапустим nginx: systemctl restart nginx
+Далее проверяем, что конфигурация nginx указана правильно: 
+```
+nginx -t
+```
+Далее перезапустим nginx: 
+```
+systemctl restart nginx
+```
 Чтобы проверить, что логи ошибок также улетают на удаленный сервер, можно удалить картинку, к которой будет обращаться nginx во время открытия веб-сраницы: rm /usr/share/nginx/html/img/header-background.png
 
 Попробуем несколько раз зайти по адресу http://192.168.50.10
 Далее заходим на log-сервер и смотрим информацию об nginx:
 cat /var/log/rsyslog/web/nginx_access.log 
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/images/Screenshot%20from%202024-01-22%2022-42-39.png)
+
 cat /var/log/rsyslog/web/nginx_error.log 
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/images/Screenshot%20from%202024-01-22%2022-43-08.png)
 
 Видим, что логи отправляются корректно. 
 4. Настройка аудита, контролирующего изменения конфигурации nginx

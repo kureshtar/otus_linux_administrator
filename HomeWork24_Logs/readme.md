@@ -166,19 +166,36 @@ cat /var/log/rsyslog/web/nginx_error.log
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/images/Screenshot%20from%202024-01-22%2022-43-08.png)
 
 Видим, что логи отправляются корректно. 
-4. Настройка аудита, контролирующего изменения конфигурации nginx
-За аудит отвечает утилита auditd, в RHEL-based системах обычно он уже предустановлен. Проверим это: rpm -qa | grep audit
+
+### 4. Настройка аудита, контролирующего изменения конфигурации nginx
+За аудит отвечает утилита auditd, в RHEL-based системах обычно он уже предустановлен. 
+Проверим это: 
+```
+rpm -qa | grep audit
+```
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/images/Screenshot%20from%202024-01-22%2022-44-33.png)
 
 Настроим аудит изменения конфигурации nginx:
 Добавим правило, которое будет отслеживать изменения в конфигруации nginx. Для этого в конец файла /etc/audit/rules.d/audit.rules добавим следующие строки:
+```
+-w /etc/nginx/nginx.conf -p wa -k nginx_conf
+-w /etc/nginx/default.d/ -p wa -k nginx_conf
+```
 
 Данные правила позволяют контролировать запись (w) и измения атрибутов (a) в:
 /etc/nginx/nginx.conf
 Всех файлов каталога /etc/nginx/default.d/
 Для более удобного поиска к событиям добавляется метка nginx_conf
-Перезапускаем службу auditd: service auditd restart
-
-После данных изменений у нас начнут локально записываться логи аудита. Чтобы проверить, что логи аудита начали записываться локально, нужно внести изменения в файл /etc/nginx/nginx.conf или поменять его атрибут, потом посмотреть информацию об изменениях: ausearch -f /etc/nginx/nginx.confq
+Перезапускаем службу auditd: 
+```
+service auditd restart
+```
+После данных изменений у нас начнут локально записываться логи аудита. 
+Чтобы проверить, что логи аудита начали записываться локально, нужно внести изменения в файл /etc/nginx/nginx.conf или поменять его атрибут, потом посмотреть информацию об изменениях:
+```
+ausearch -f /etc/nginx/nginx.confq
+```
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork24_Logs/images/Screenshot%20from%202024-01-22%2022-49-32.png)
 Также можно воспользоваться поиском по файлу /var/log/audit/audit.log, указав наш тэг: grep nginx_conf /var/log/audit/audit.log
 
 

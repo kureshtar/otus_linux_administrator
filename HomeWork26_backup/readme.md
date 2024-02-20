@@ -19,8 +19,21 @@ yum install borgbackup
 ```
 
 
-На сервере backupserver создаем пользователя и каталог /var/backup (в домашнем задании нужно будет создать диск ~2Gb и примонтировать его) и назначаем на него права пользователя borg
-	# 			
+На сервере backupserver при создании машины должен быть дополнительный диск ~2Gb.
+Настраиваем этот дополнительный диск:
+Команда fdisk -l на сервере показывает, что есть диск sdb, у которого пока нет разделв:
+```
+fdisk -l
+```
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2022-56-17.png)
+
+На сервере backupserver создаем пользователя и каталог /var/backup монтируем в эту папку дополнительный этот диск и назначаем на него права пользователя borg
+```
+adduser borg
+passwd borg
+```
+ 
+ # 			
 	# mkdir /var/backup
 	# chown borg:borg /var/backup/
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2022-53-28.png)

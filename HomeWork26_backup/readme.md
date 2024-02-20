@@ -3,7 +3,9 @@
 
 Установка и настройка:
 Тестовый стенд:
+
 backupserver 192.168.50.10 CentOS 7
+
 backupclient 192.168.50.11 CentOS 7
 
 Подключаем на backupserver и на backupclient EPEL репозиторий с дополнительными пакетами

@@ -62,11 +62,18 @@ fdisk -l
 adduser borg
 passwd borg
 ```
- 
- # 			
-	# mkdir /var/backup
-	# chown borg:borg /var/backup/
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2022-53-28.png)
+
+``` 
+mkdir /var/backup
+```
+
+```
+chown borg:borg /var/backup/
+```
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-02-08.png)
+
+mount 
 
 
 

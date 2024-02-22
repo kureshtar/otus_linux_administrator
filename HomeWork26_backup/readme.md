@@ -1,7 +1,9 @@
 ## Резервное копирование
+
 ## **Содержание ДЗ**
 
 Установка и настройка:
+
 Тестовый стенд:
 
 backupserver 192.168.50.10 CentOS 7
@@ -17,7 +19,6 @@ yum install epel-release
 ```
 yum install borgbackup
 ```
-
 
 На сервере backupserver при создании машины должен быть дополнительный диск ~2Gb.
 Настраиваем этот дополнительный диск:
@@ -43,6 +44,17 @@ fdisk -l
 ```
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2022-59-25.png)
 
+Но у созданного раздела /dev/sdb1 пока нет файловой системы:
+
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2022-59-53.png)
+
+Форматируем в ext4:
+
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-00-24.png)
+
+Видим, что файловая система теперь отображается:
+
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-02-41.png)
 
 
 На сервере backupserver создаем пользователя и каталог /var/backup монтируем в эту папку дополнительный этот диск и назначаем на него права пользователя borg

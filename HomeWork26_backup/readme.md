@@ -25,15 +25,19 @@ yum install borgbackup
 ```
 fdisk -l
 ```
+
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2022-56-17.png)
 
 Создаем на нем primary раздел:
+
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2022-57-52.png)
 
 Сохраняем изменения по конфигурации диска:
+
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2022-58-48.png)
 
 Теперь видим созданный рездел:
+
 ```
 fdisk -l
 ```

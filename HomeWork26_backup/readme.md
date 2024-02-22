@@ -89,15 +89,27 @@ chmod 600 .ssh/authorized_keys
 
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-04-59.png)
 
-На backupclient:
+Все дальнейшие действия будут проходить на backupclient сервере.
+
+Гегерируем ssh ключ на клиенте:
+
 ```	
 ssh-keygen
 ```
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-07-15.png)
 
-Все дальнейшие действия будут проходить на client сервере.
+Копируем полученный ключ на клиенте:
+
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-08-26.png)
+
+Вставляем этот ключ на сервере в /borg/.ssh/authorized_keys:
+
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-09-48.png)
+
+
 Инициализируем репозиторий borg на backup сервере с client сервера:
-	# borg init --encryption=repokey borg@192.168.11.160:/var/backup/
+
+ # borg init --encryption=repokey borg@192.168.11.160:/var/backup/
 
 
 Запускаем для проверки создания бэкапа

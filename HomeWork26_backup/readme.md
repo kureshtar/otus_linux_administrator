@@ -112,24 +112,40 @@ ssh-keygen
 
 Инициализируем репозиторий borg на backup сервере с client сервера:
 
- # borg init --encryption=repokey borg@192.168.11.160:/var/backup/
+```
+borg init --encryption=repokey borg@192.168.50.10:/var/backup/
+```
 
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-13-27.png)
 
-Запускаем для проверки создания бэкапа
-	# borg create --stats --list borg@192.168.11.160:/var/backup/::"etc-{now:%Y-%m-%d_%H:%M:%S}" /etc
+Запускаем для проверки создания бэкапа:
+	
+```
+borg create --stats --list borg@192.168.50.10:/var/backup/::"etc-{now:%Y-%m-%d_%H:%M:%S}" /etc
+```
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-14-27.png)
 
-Смотрим, что у нас получилось
-	# borg list borg@192.168.11.160:/var/backup/
-Enter passphrase for key ssh://borg@192.168.11.160/var/backup: 
-etc-2021-10-15_23:00:15              Fri, 2021-10-15 23:00:21 [573f7b4071bd2e079957217f397394c336eaf172208755110b311ada735e16d3]
- 
-Смотрим список файлов
-	# borg list borg@192.168.11.160:/var/backup/::etc-2021-10-15_23:00:15
+Смотрим, что у нас получилось:
+```
+borg list borg@192.168.50.10:/var/backup/
+```
 
-Достаем файл из бекапа
-	# borg extract borg@192.168.11.160:/var/backup/::etc-2021-10-15_23:00:15 etc/hostname
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-16-28.png)
 
-Автоматизируем создание бэкапов с помощью systemd
+Смотрим список файлов:
+```
+borg list borg@192.168.50.10:/var/backup/::etc-2024-02-14_06:12:58
+```
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-17-11.png)
+
+Достаем файл из бекапа:
+```
+borg extract borg@192.168.50.10:/var/backup/::etc-2024-02-14_06:12:58 etc/hostname
+```
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-22-19.png)
+
+## Автоматизируем создание бэкапов с помощью systemd.
+
 Создаем сервис и таймер в каталоге /etc/systemd/system/
 # /etc/systemd/system/borg-backup.service
 [Unit]

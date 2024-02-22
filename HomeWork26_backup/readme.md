@@ -73,19 +73,27 @@ chown borg:borg /var/backup/
 ```
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-02-08.png)
 
-mount 
+mount /dev/sdb1 /var/backup 
+
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-02-22.png)
 
 
+На сервере backupserver создаем каталог ~/.ssh/authorized_keys в каталоге /home/borg
+```
+su - borg
+mkdir .ssh
+touch .ssh/authorized_keys
+chmod 700 .ssh
+chmod 600 .ssh/authorized_keys
+```
 
-На сервер backup создаем каталог ~/.ssh/authorized_keys в каталоге /home/borg
-	# su - borg
-	# mkdir .ssh
-   	# touch .ssh/authorized_keys
-   	# chmod 700 .ssh
-   	# chmod 600 .ssh/authorized_keys
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-04-59.png)
 
-На csu 
-	# ssh-keygen
+На backupclient:
+```	
+ssh-keygen
+```
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-07-15.png)
 
 Все дальнейшие действия будут проходить на client сервере.
 Инициализируем репозиторий borg на backup сервере с client сервера:

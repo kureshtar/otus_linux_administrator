@@ -180,10 +180,10 @@ ExecStart=/bin/borg prune \
     ${REPO}
 ```
 
-```
+
 [/etc/systemd/system/borg-backup.timer :](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/borg-backup.timer)
 
-```
+
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-24-54.png)
 
 ```

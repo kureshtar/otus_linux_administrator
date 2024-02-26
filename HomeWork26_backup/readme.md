@@ -147,9 +147,9 @@ borg extract borg@192.168.50.10:/var/backup/::etc-2024-02-14_06:12:58 etc/hostna
 ## Автоматизируем создание бэкапов с помощью systemd.
 
 Создаем сервис и таймер в каталоге /etc/systemd/system/
-```
-/etc/systemd/system/borg-backup.service
-```
+
+[/etc/systemd/system/borg-backup.service :](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/borg-backup.service)
+
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-24-33.png)
 
 ```

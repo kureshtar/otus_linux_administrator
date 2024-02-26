@@ -159,10 +159,8 @@ Description=Borg Backup
 [Service]
 Type=oneshot
 
-# Парольная фраза
-Environment="BORG_PASSPHRASE=Otus1234"
 # Репозиторий
-Environment=REPO=borg@192.168.11.160:/var/backup/
+Environment=REPO=borg@192.168.50.10:/var/backup/
 # Что бэкапим
 Environment=BACKUP_TARGET=/etc
 
@@ -182,7 +180,12 @@ ExecStart=/bin/borg prune \
     ${REPO}
 ```
 
-# /etc/systemd/system/borg-backup.timer
+```
+/etc/systemd/system/borg-backup.timer
+```
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-24-54.png)
+
+```
 [Unit]
 Description=Borg Backup
 
@@ -191,18 +194,30 @@ OnUnitActiveSec=5min
 
 [Install]
 WantedBy=timers.target
+```
 
 Включаем и запускаем службу таймера
-# systemctl enable borg-backup.timer 
-# systemctl start borg-backup.timer
+```
+systemctl enable borg-backup.timer 
+systemctl start borg-backup.timer
+```
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-26-26.png)
 
-Проверяем работу таймера
-# systemctl list-timers --all
-NEXT                          LEFT          LAST                          PASSED       UNIT                         ACTIVATES
-Сб 2021-10-16 11:37:51 UTC  3min 25s left Сб 2021-10-16 11:32:51 UTC  1min 34s ago borg-backup.timer            borg-backup.service
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-28-16.png)
 
-Проверяем список бекапов
-Enter passphrase for key ssh://borg@192.168.11.160/var/backup: 
-etc-2021-10-15_23:00:15 Fri, 2021-10-15 23:00:21 
-etc-2021-10-16_11:32:51 Sat, 2021-10-16 11:32:52
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-28-45.png)
+
+Проверяем работу таймера:
+```
+systemctl list-timers --all
+```
+
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-29-14.png)
+
+
+Проверяем список бекапов:
+
+![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork26_backup/images/Screenshot%20from%202024-02-14%2023-30-08.png)
+
+
 

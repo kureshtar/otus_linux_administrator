@@ -1,0 +1,65 @@
+---
+- name: NETWORKLAB | Install and configure
+  hosts: all
+  become: true
+  tasks:
+  - name: Disable ufw
+    ansible.builtin.service:
+      name: ufw
+      state: stopped
+      enabled: false
+
+  - name: Update repositories cache and install iptables-persistent
+    apt:
+      name: iptables-persistent
+      update_cache: yes
+    when: (ansible_hostname == "inetRouter")
+
+  - name: Set up NAT on inetRouter
+    template: 
+      src: "{{ item.src }}"
+      dest: "{{ item.dest }}"
+      owner: root
+      group: root
+      mode: "{{ item.mode }}"
+    with_items:
+      - { src: "../template/rules.v4", dest: "/etc/iptables/rules.v4", mode: "0644" }
+    when: (ansible_hostname == "inetRouter")
+
+  - name: Restart service iptables
+    ansible.builtin.service:
+      name: iptables
+      state: restarted
+    when: (ansible_hostname == "inetRouter")
+
+  - name: set custom route and gateway
+    template:
+      src: "../template/50-vagrant-{{ansible_hostname}}.yaml"
+      dest: "/etc/netplan/50-vagrant-{{ansible_hostname}}.yaml"
+      owner: root
+      group: root
+      mode: 0644
+
+  - name: set up forward packages across routers
+    sysctl:
+      name: net.ipv4.conf.all.forwarding
+      value: '1'
+      state: present
+    when: "'routers' in group_names"
+
+  - name: disable default route
+    template: 
+      src: ../template/00-installer-config.yaml
+      dest: /etc/netplan/00-installer-config.yaml
+      owner: root
+      group: root
+      mode: 0644
+    when: (ansible_hostname != "inetRouter")
+
+  - name: Apply netplan
+    command: netplan apply
+    ignore_errors: true
+
+  - name: netplan generate
+    command: netplan generate
+    ignore_errors: true

@@ -34,4 +34,4 @@ ___
 
 <a href="https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork27_Network/ansible.cfg">ansible.cfg</a>
 
-ansible-playbook -i hosts playbooks/<a href="https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork27_Network/networklab.yml">networklab.yml</a>
+ansible-playbook -i hosts playbooks/<a href="https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork27_Network/playbooks%20/networklab.yml">networklab.yml</a>

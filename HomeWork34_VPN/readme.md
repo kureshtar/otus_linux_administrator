@@ -1,5 +1,4 @@
-# otus-linux-day34
-## *Мосты, туннели, VPN*
+# Мосты, туннели, VPN
 
 # **Prerequisite**
 - Host OS: Debian 12.0.0

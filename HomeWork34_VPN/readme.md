@@ -1,12 +1,5 @@
 # Мосты, туннели, VPN
 
-# **Prerequisite**
-- Host OS: Debian 12.0.0
-- Guest OS: CentOS 7.8.2003
-- VirtualBox: 6.1.40
-- Vagrant: 2.3.2
-- Ansible: 2.13.4
-
 # **Содержание ДЗ**
 
 1. между двумя виртуалками поднять vpn в режимах

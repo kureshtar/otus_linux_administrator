@@ -237,11 +237,11 @@ root@nas:/etc/openvpn# ip addr
 OpenVPN CLIENT LIST
 Updated,Fri Nov  4 12:15:25 2022
 Common Name,Real Address,Bytes Received,Bytes Sent,Connected Since
-client,192.168.56.1:38261,3490,3134,Fri Nov  4 12:15:03 2022
+client,192.168.56.1:38261,3490,3134,Sat Mar  2 12:15:03 2024
 ROUTING TABLE
 Virtual Address,Common Name,Real Address,Last Ref
-10.10.10.6,client,192.168.56.1:38261,Fri Nov  4 12:15:04 2022
-192.168.33.0/24,client,192.168.56.1:38261,Fri Nov  4 12:15:04 2022
+10.10.10.6,client,192.168.56.1:38261,Sat Mar  2 12:15:04 2024
+192.168.33.0/24,client,192.168.56.1:38261,Sat Mar  2 12:15:04 2024
 GLOBAL STATS
 Max bcast/mcast queue length,0
 END

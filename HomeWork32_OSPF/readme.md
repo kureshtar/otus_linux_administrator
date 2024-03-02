@@ -4,8 +4,8 @@ ___
 * Создать домашнюю сетевую лабораторию.
 * Научится настраивать протокол OSPF в Linux-based системах.
 
-Выполнение:
-Настройка VM и OSPF между машинами на базе Quagga
+## Выполнение:
+## Настройка VM и OSPF между машинами на базе Quagga
 
 <a href="https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork32_OSPF/Vagrantfile">Vagrantfile</a>
 
@@ -39,7 +39,7 @@ ansible-playbook -i ansible/hosts ansible/<a href="https://github.com/kureshtar/
 
 ![img_5](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork32_OSPF/images/5.png)
 
-## 2.2 Настройка ассиметричного роутинга
+## Настройка ассиметричного роутинга
 
 ansible-playbook -i ansible/hosts ansible/<a href="https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork32_OSPF/ansible%20/task2.yml">task2.yml</a>
 
@@ -76,7 +76,7 @@ tcpdump -i enp0s8
 Таким образом мы видим ассиметричный роутинг.
 
 
-## 2.3 Настройка симметичного роутинга
+## Настройка симметичного роутинга
 
 Так как у нас уже есть один «дорогой» интерфейс, нам потребуется добавить ещё один дорогой интерфейс, чтобы у нас перестала работать ассиметричная маршрутизация. 
 

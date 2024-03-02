@@ -45,6 +45,9 @@ ping -I 192.168.10.1 192.168.20.1
 ```
 
 2) На router2 запускаем tcpdump, который будет смотреть трафик только на порту enp0s9.
+```
+tcpdump -i enp0s9
+```
 
 Видим что данный порт только получает ICMP-трафик с адреса 192.168.10.1:
 
@@ -52,6 +55,10 @@ ping -I 192.168.10.1 192.168.20.1
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork32_OSPF/images/6.png)
 
 На router2 запускаем tcpdump, который будет смотреть трафик только на порту enp0s8:
+```
+tcpdump -i enp0s8
+```
+
 
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork32_OSPF/images/7.png)
 
@@ -62,6 +69,27 @@ ping -I 192.168.10.1 192.168.20.1
 
 ## 2.3 Настройка симметичного роутинга
 
+Так как у нас уже есть один «дорогой» интерфейс, нам потребуется добавить ещё один дорогой интерфейс, чтобы у нас перестала работать ассиметричная маршрутизация. 
+
+Так как в прошлом задании мы заметили что router2 будет отправлять обратно трафик через порт enp0s8, мы также должны сделать его дорогим и далее проверить, что теперь используется симметричная маршрутизация:
+
+Поменяем стоимость интерфейса enp0s8 на router2:
+
 ansible-playbook -i ansible/hosts ansible/<a href="https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork32_OSPF/ansible%20/task3.yml">task3.yml</a>
+
+После внесения данных настроек, мы видим, что маршрут до сети 192.168.10.0/30  пойдёт через router2.
+
+Давайте это проверим:
+1) На router1 запускаем пинг от 192.168.10.1 до 192.168.20.1: 
+
+```
+ping -I 192.168.10.1 192.168.20.1
+```
+
+2) На router2 запускаем tcpdump, который будет смотреть трафик только на порту enp0s9:
+```
+tcpdump -i enp0s9
+```
+Теперь мы видим, что трафик между роутерами ходит симметрично:
 
 ![img_1](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork32_OSPF/images/8.png)

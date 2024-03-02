@@ -1,0 +1,67 @@
+---
+- name: OVPN
+  hosts: all
+  become: yes
+  vars_files:
+    - defaults/main.yml
+  tasks:
+    - name: Install repo
+      yum:
+        name: epel-release
+        state: present
+
+    - name: Install packages
+      yum:
+        name: 
+          - openvpn
+          - iperf3
+          - policycoreutils-python
+          - easy-rsa
+          - traceroute
+          - tcpdump
+          - net-tools
+        state: present
+
+    - name: Copy ovpn config to router
+      template:
+        src: server.conf
+        dest: /etc/openvpn/server.conf
+
+    - name: setup secret key
+      copy:
+        src: static.key
+        dest: /etc/openvpn/static.key
+        owner: root
+        group: root
+        mode: 0600
+      when: (ansible_hostname == "server" or ansible_hostname == "client")
+      notify: restart openvpn
+
+    - name: Allow openvpn to listen on udp port 1207
+      seport:
+        ports: 1207
+        proto: udp
+        setype: openvpn_port_t
+        state: present
+      when: (ansible_hostname == "ras")
+
+    - name: copy PKI files for openvpn
+      copy:
+        src: "{{ item.src }}"
+        dest: "{{ item.dst }}"
+        directory_mode: yes
+        mode: 0600
+      with_items: 
+        - { src: 'client', dst: '/etc/openvpn/client/' }
+        - { src: 'ta.key', dst: '/etc/openvpn/' }
+        - { src: 'pki', dst: '/etc/openvpn/' }
+      tags: test
+      when: (ansible_hostname == "ras")
+      notify: restart openvpn
+
+  handlers:
+    - name: restart openvpn
+      systemd:
+        name: openvpn@server
+        state: restarted
+        enabled: yes

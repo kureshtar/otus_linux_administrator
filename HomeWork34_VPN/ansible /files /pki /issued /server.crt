@@ -1,0 +1,86 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            3a:d5:8d:18:13:95:84:d2:77:4f:e4:2b:c5:0f:f8:54
+    Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN=rasvpn
+        Validity
+            Not Before: Nov  3 10:51:15 2022 GMT
+            Not After : Feb  5 10:51:15 2025 GMT
+        Subject: CN=rasvpn
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:b7:f3:35:4b:7c:c0:42:15:49:54:b5:76:aa:03:
+                    48:2b:aa:a3:ea:71:ae:9f:1c:a3:39:de:76:af:cb:
+                    21:ae:5e:f8:66:25:6b:4c:5e:79:b0:c2:d8:1a:7b:
+                    f2:6d:e2:fe:3a:6f:31:04:07:9a:3a:8a:5d:8e:49:
+                    5d:3b:e6:6c:49:73:6c:9c:04:80:39:1e:2b:a5:f9:
+                    41:81:c6:ac:7c:e4:90:00:69:a8:8b:13:1d:89:b0:
+                    c2:ce:01:14:3d:22:59:a3:f2:9a:98:d9:f0:be:02:
+                    cc:86:49:b7:4f:6d:5c:a3:e3:c4:34:15:44:0a:07:
+                    39:65:10:51:d1:e4:c1:b0:59:11:58:b3:f3:9f:11:
+                    75:aa:73:d6:03:13:41:76:4b:03:cc:14:ef:e4:75:
+                    97:be:ce:b7:24:b0:a5:ee:86:82:50:76:d4:e3:e3:
+                    b5:c7:66:2f:da:65:f2:17:34:55:4e:47:75:af:db:
+                    8a:53:12:65:26:8f:30:9e:95:e1:86:c7:25:1f:40:
+                    af:c3:00:0d:92:f5:f5:8d:fa:18:d5:c8:96:db:c5:
+                    6d:be:2b:91:0b:85:35:02:b9:5d:60:d2:d3:df:3f:
+                    7c:20:bd:67:2f:2a:47:1b:32:3f:2c:38:41:89:01:
+                    f9:17:a2:7d:65:62:6e:86:d1:4b:c1:cc:8e:37:32:
+                    bf:75
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                21:0F:2C:60:E9:0A:D9:2C:A9:6E:19:98:C8:D8:90:0B:58:12:A3:CC
+            X509v3 Authority Key Identifier: 
+                keyid:AF:81:A2:71:3B:8E:65:C5:DD:F3:86:D2:2D:82:B1:B1:B5:3E:D8:78
+                DirName:/CN=rasvpn
+                serial:CE:F2:AD:A7:B6:CD:2C:56
+
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication
+            X509v3 Key Usage: 
+                Digital Signature, Key Encipherment
+            X509v3 Subject Alternative Name: 
+                DNS:rasvpn
+    Signature Algorithm: sha256WithRSAEncryption
+         6c:f9:80:ca:07:2f:21:4f:fa:f7:82:80:2a:05:f3:09:14:0f:
+         2b:36:0d:27:96:b7:c8:37:6b:f0:e3:89:c6:57:d0:5b:04:44:
+         a2:23:56:c6:e9:ff:4c:7f:dc:72:25:14:25:a6:a3:98:a4:3c:
+         e4:40:40:76:1f:1a:89:bc:03:6f:83:d0:ed:d4:9a:2c:54:a8:
+         c9:ef:33:64:ba:89:06:02:5c:73:35:83:13:68:ef:ca:de:35:
+         83:d4:a3:cf:0f:b8:4a:80:81:d9:82:b0:fa:b5:55:bf:79:3e:
+         11:56:e0:4c:45:a5:6d:0a:53:60:69:f5:69:f1:92:2b:0a:8f:
+         99:eb:5f:27:43:7f:86:de:39:04:ae:bc:96:53:bf:77:38:66:
+         63:fd:bd:99:ea:23:e3:ea:e4:98:c6:d7:f5:d8:5e:46:ad:3c:
+         ab:e9:ff:25:45:2e:60:a9:e0:ed:1c:45:dd:27:c8:a2:3b:6e:
+         46:7b:ef:75:53:76:a3:2f:95:65:0d:25:b6:29:bc:e9:20:56:
+         f6:76:56:2a:3b:bf:52:2a:05:d0:c3:ac:c8:50:5a:6f:4b:9d:
+         ca:38:3c:9b:24:b2:2c:e4:ae:c9:7b:26:8d:0d:91:f4:2d:6a:
+         5e:e8:d9:49:df:12:8f:3d:1c:34:01:eb:71:54:8a:ff:dd:74:
+         1c:79:16:60
+-----BEGIN CERTIFICATE-----
+MIIDUjCCAjqgAwIBAgIQOtWNGBOVhNJ3T+QrxQ/4VDANBgkqhkiG9w0BAQsFADAR
+MQ8wDQYDVQQDDAZyYXN2cG4wHhcNMjIxMTAzMTA1MTE1WhcNMjUwMjA1MTA1MTE1
+WjARMQ8wDQYDVQQDDAZyYXN2cG4wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
+AoIBAQC38zVLfMBCFUlUtXaqA0grqqPqca6fHKM53navyyGuXvhmJWtMXnmwwtga
+e/Jt4v46bzEEB5o6il2OSV075mxJc2ycBIA5Hiul+UGBxqx85JAAaaiLEx2JsMLO
+ARQ9Ilmj8pqY2fC+AsyGSbdPbVyj48Q0FUQKBzllEFHR5MGwWRFYs/OfEXWqc9YD
+E0F2SwPMFO/kdZe+zrcksKXuhoJQdtTj47XHZi/aZfIXNFVOR3Wv24pTEmUmjzCe
+leGGxyUfQK/DAA2S9fWN+hjVyJbbxW2+K5ELhTUCuV1g0tPfP3wgvWcvKkcbMj8s
+OEGJAfkXon1lYm6G0UvBzI43Mr91AgMBAAGjgaUwgaIwCQYDVR0TBAIwADAdBgNV
+HQ4EFgQUIQ8sYOkK2SypbhmYyNiQC1gSo8wwQQYDVR0jBDowOIAUr4GicTuOZcXd
+84bSLYKxsbU+2HihFaQTMBExDzANBgNVBAMMBnJhc3ZwboIJAM7yrae2zSxWMBMG
+A1UdJQQMMAoGCCsGAQUFBwMBMAsGA1UdDwQEAwIFoDARBgNVHREECjAIggZyYXN2
+cG4wDQYJKoZIhvcNAQELBQADggEBAGz5gMoHLyFP+veCgCoF8wkUDys2DSeWt8g3
+a/DjicZX0FsERKIjVsbp/0x/3HIlFCWmo5ikPORAQHYfGom8A2+D0O3UmixUqMnv
+M2S6iQYCXHM1gxNo78reNYPUo88PuEqAgdmCsPq1Vb95PhFW4ExFpW0KU2Bp9Wnx
+kisKj5nrXydDf4beOQSuvJZTv3c4ZmP9vZnqI+Pq5JjG1/XYXkatPKvp/yVFLmCp
+4O0cRd0nyKI7bkZ773VTdqMvlWUNJbYpvOkgVvZ2Vio7v1IqBdDDrMhQWm9Lnco4
+PJsksizkrsl7Jo0NkfQtal7o2UnfEo89HDQB63FUiv/ddBx5FmA=
+-----END CERTIFICATE-----

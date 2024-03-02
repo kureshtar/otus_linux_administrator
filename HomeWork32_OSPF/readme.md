@@ -19,6 +19,15 @@ ansible-playbook -i ansible/hosts ansible/<a href="https://github.com/kureshtar/
 
 ![img_3](https://github.com/kureshtar/otus_linux_administrator/blob/main/HomeWork32_OSPF/images/3.png)
 
+Если мы правильно настроили OSPF, то с любого хоста нам должны быть доступны сети:
+192.168.10.0/24
+192.168.20.0/24
+192.168.30.0/24
+10.0.10.0/30 
+10.0.11.0/30
+10.0.13.0/30
+
+
 Проверим доступность сетей с хоста router1:
 Попробуем сделать ping до ip-адреса 192.168.30.1
 И запустим трассировку до адреса 192.168.30.1.
